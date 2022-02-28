@@ -3,10 +3,10 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
-import { productContext } from '../../../ProductContext/ProductContext';
 import { useNavigate } from 'react-router-dom';
+import { productContext } from '../../../ProductContext/ProductContext';
 
-const OjectAdd = () => {
+const AddObject = () => {
     const [values, setValues] = React.useState({
         title: '',
         image: '',
@@ -77,4 +77,4 @@ const OjectAdd = () => {
     );
 };
 
-export default ObjectAdd;
+export default AddObject;

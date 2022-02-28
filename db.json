@@ -1,5 +1,5 @@
 {
-  "objects": [
+  "products": [
     {
       "title": "1231",
       "image": "123",
@@ -7,7 +7,22 @@
       "type": "1231",
       "description": "123",
       "id": 1
+    },
+    {
+      "title": "123",
+      "image": "123",
+      "price": 123,
+      "type": "123",
+      "description": "123",
+      "id": 2
+    },
+    {
+      "title": "rere",
+      "image": "rere",
+      "price": null,
+      "type": "rere",
+      "description": "rere",
+      "id": 3
     }
-  ],
-  "h": []
+  ]
 }

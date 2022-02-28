@@ -3,14 +3,13 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { productContext } from '../../../Contexts/ProductsContext';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom';
-import './ProductCard.css'
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import ProductStar from '../../ProductStar/ProductStar';
+// import ProductStar from '../../ProductStar/ProductStar';
+import { productContext } from '../../ProductContext/ProductContext';
 
 export default function ProductCard({item}) {
     const {deleteProduct, addToCart, checkProductInCart, useAuth} = React.useContext(productContext)
@@ -77,9 +76,9 @@ export default function ProductCard({item}) {
             <div style={{display: 'flex', justifyContent: 'center', paddingBottom: '10px'}}>
                 {icons}
               </div>
-              <div style={{display: 'flex', justifyContent: 'center', paddingBottom: '10px'}}>
+              {/* <div style={{display: 'flex', justifyContent: 'center', paddingBottom: '10px'}}>
                 <ProductStar/>
-              </div>
+              </div> */}
         </Card>
         </>     
   );

@@ -1,27 +1,41 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { BrowserRouter,  Route,  Routes } from 'react-router-dom';
-import ObjectAdd from './Components/Admin/AddObject/ObjectAdd';
-import DetailPage from './Components/Admin/DetailObject/DetailObject';
-import EditPage from './Components/Admin/EditObject/EditObject';
-import ListPage from './Components/Admin/ListObject/ListObject';
-import { store } from './Components/Admin/Store';
-import Home from './Components/Home/Home';
-// import NavBar from './Components/NavBar/NavBar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AddObject from './Components/Admin/AddObject';
+import EditObject from './Components/Admin/EditObject';
+// import Login from './Components/Auth/Login/Login';
+// import Register from './Components/Auth/Register/Register';
+// import Cart from './Components/Cart/Cart';
+// import Cosmograph from './Components/Cosmograph/Cosmograph';
+// import MyNavbar from './Components/Header/MyNavbar';
+// import Home from './Components/Home/Home';
+// import Payment from './Components/Payment/Payment';
+import DetailObject from './Components/Admin/DetailObject';
+import ListObject from './Components/Admin/ListObject';
+// import ProductStar from './Components/ProductStar/ProductStar';
+import ProductsContextProvider from './Contexts/ProductsContext';
+
+
 
 const MyRoutes = () => {
     return (
-        <Provider store={store}>
+        <ProductsContextProvider>
             <BrowserRouter>
+            <MyNavbar />
                 <Routes>
-                    <Route path='/' element={<Home/>}/> 
-                    <Route path='/create' element={<ObjectAdd/>}/> 
-                    <Route path='/list' element={<ListPage/>}/>
-                    <Route path='/detail/:id' element={<DetailPage/>}/>
-                    <Route path='/edit/:id' element={<EditPage/>}/>
+                    <Route path='/list' element={<ListObject/>}/>
+                    <Route path='/add' element={<AddObject/>} />
+                    {/* <Route path='/' element={<Home/>} /> */}
+                    <Route path='list/edit/:id' element={<EditObject/>} />
+                    <Route path='/detail/:id' element={<DetailObject/>} />
+                    <Route path='/cart' element={<Cart/>} />
+                    <Route path='/register' element={<Register/>} />
+                    <Route path='/login' element={<Login/>} />
+                    <Route path='/cosmograph' element={<Cosmograph/>}/>         
+                    <Route path='/pay' element={<Payment/>} />
+                    <Route path='/star' element={<ProductStar/>} />
                 </Routes>
-            </BrowserRouter>          
-        </Provider>
+            </BrowserRouter>
+        </ProductsContextProvider>
     );
 };
 

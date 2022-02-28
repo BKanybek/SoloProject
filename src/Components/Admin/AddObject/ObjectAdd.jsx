@@ -1,172 +1,79 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import* as yup from "yup"
-import { createUser } from '../../Actions/UserActions';
-import { Formik } from "formik";
-import { toast } from "react-toastify";
-import { Form, Button } from "react-bootstrap"
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import { TextField } from '@mui/material';
+import { Button } from '@mui/material';
+import { productContext } from '../../../ProductContext/ProductContext';
+import { useNavigate } from 'react-router-dom';
 
-const ObjectAdd = () => {
-    const schema = yup.object().shape({
-        first_name: yup
-          .string()
-          .min(2, "Too short")
-          .max(256, "Too long")
-          .required("Required"),
-        last_name: yup
-          .string()
-          .min(2, "Too short")
-          .max(256, "Too long")
-          .required("Required"),
-        birth_date: yup.string().required("Required"),
-        gender: yup.string().required("Required"),
-        job: yup
-          .string()
-          .min(2, "Too short")
-          .max(256, "Too long")
-          .required("Required"),
-        biography: yup
-          .string()
-          .min(2, "Too short")
-          .max(1024, "Too long")
-          .required("Required"),
-        is_active: yup.bool().required("Required"),
-      });
+const OjectAdd = () => {
+    const [values, setValues] = React.useState({
+        title: '',
+        image: '',
+        price: '',
+        type: '',
+        description: '',
+    })
 
-      const dispatch = useDispatch()
-      const navigate = useNavigate()
-      const handleClick = (data) => {
-          dispatch(createUser(data, toast))
-          navigate('/')
+    const { addProduct } = React.useContext(productContext)
+    const navigate = useNavigate()
+
+    const handleInp = (e) => {
+      let obj = {
+          ...values,
+          [e.target.name]: e.target.value
       }
+      setValues(obj)
+  }
+
+    const handleSave = () => {
+        if(!values.image) values.image = ''
+        addProduct({...values, price: +values.price})
+        navigate('/')
+    }
 
     return (
-        <div className="container mt-5 mb-5">
-      <div className="mb-5">
-        <Link to="/">
-          <Button className="btn-success">Main page</Button>
-        </Link>
-      </div>
-      <Formik
-        validationSchema={schema}
-        onSubmit={(data) => handleClick(data)}
-        initialValues={{
-          first_name: "",
-          last_name: "",
-          birth_date: "2021-12-31",
-          gender: "",
-          job: "",
-          biography: "",
-          is_active: false,
-        }}
-      >
-        {({ handleSubmit, handleChange, values, touched, errors }) => (
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3">
-              <Form.Label>First name</Form.Label>
-              <Form.Control
-                onChange={handleChange}
-                name="first_name"
-                type="text"
-                placeholder="First name"
-                isValid={touched.first_name && !errors.first_name}
-                isInvalid={!!errors.first_name}
-                value={values.first_name}
-              />
-              <Form.Control.Feedback type="invalid">
-                {errors.last_name}
-              </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Last name</Form.Label>
-              <Form.Control
-                onChange={handleChange}
-                name="last_name"
-                type="text"
-                placeholder="Last name"
-                isValid={touched.last_name && !errors.last_name}
-                isInvalid={!!errors.last_name}
-                value={values.last_name}
-              />
-              <Form.Control.Feedback type="invalid">
-                {errors.last_name}
-              </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>DOB</Form.Label>
-              <Form.Control
-                onChange={handleChange}
-                name="birth_date"
-                type="date"
-                placeholder="Date of birthday"
-                isValid={touched.birth_date && !errors.birth_date}
-                isInvalid={!!errors.birth_date}
-                value={values.birth_date}
-              />
-              <Form.Control.Feedback type="invalid">
-                {errors.birth_date}
-              </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Sex</Form.Label>
-              <Form.Select
-                onChange={handleChange}
-                name="gender"
-                className="me-sm-2"
-                isValid={touched.gender && !errors.gender}
-                isInvalid={!!errors.gender}
-                value={values.gender}
-              >
-                <option value="">Choose...</option>
-                <option value="male">male</option>
-                <option value="female">female</option>
-              </Form.Select>
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Job</Form.Label>
-              <Form.Control
-                onChange={handleChange}
-                name="job"
-                type="text"
-                placeholder="Job"
-                isValid={touched.job && !errors.job}
-                isInvalid={!!errors.job}
-                value={values.job}
-              />
-              <Form.Control.Feedback type="invalid">
-                {errors.job}
-              </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Biography</Form.Label>
-              <Form.Control
-                onChange={handleChange}
-                name="biography"
-                as="textarea"
-                rows={3}
-                isValid={touched.biography && !errors.biography}
-                isInvalid={!!errors.biography}
-                value={values.biography}
-              />
-              <Form.Control.Feedback type="invalid">
-                {errors.biography}
-              </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Check
-                checked={values.is_active}
-                onChange={handleChange}
-                name="is_active"
-                type="checkbox"
-                label="Is active"
-              />
-            </Form.Group>
-            <Button type="submit">Add</Button>
-          </Form>
-        )}
-      </Formik>
-    </div>
+        <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        '& > :not(style)': {
+          m: '40px auto',
+          maxwidth: 1000,
+          height: 'auto',
+        },
+      }}
+    >
+      <Paper elevation={3}>
+        <h1 style={{textAlign: 'center'}}>Добавить Товар</h1>
+        <div style={{display: 'flex', justifyContent: 'space-around', color: 'black'}}>
+            <div style={{margin: '10px'}}>
+                <img width='300' src={values.image ? values.image : 'https://content.onliner.by/news/1100x5616/472baa6904f365c4bae96d6b77c13010.jpeg' } />
+            </div>
+            <div style={{
+                width: '450px',
+                display: 'flex',
+                alignItems: 'center',
+                flexDirection: 'column',
+                justifyContent: 'center'
+            }}>
+                <form  autoComplete='off' style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <TextField style={{padding: '10px'}} name='title' onChange={handleInp} value={values.title} variant='outlined' label='Title'/>
+                    <TextField style={{padding: '10px'}} name='image' onChange={handleInp} value={values.image} variant='outlined' label='Image'/>
+                    <TextField style={{padding: '10px'}} name='price' onChange={handleInp} value={values.price} variant='outlined' label='Price'/>
+                    <TextField style={{padding: '10px'}} name='type' onChange={handleInp} value={values.type} variant='outlined' label='Type'/>
+                    <TextField style={{padding: '10px'}} name='description' onChange={handleInp} value={values.description} variant='outlined' label='Description'/>
+                </form>
+                <Button onClick={handleSave} variant="contained" color='warning'>Добавить</Button>
+            </div>
+        </div>
+      </Paper>
+    </Box>
     );
 };
 

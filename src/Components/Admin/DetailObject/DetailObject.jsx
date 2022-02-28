@@ -1,81 +1,69 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { deleteUser, getOneUser } from '../../Actions/UserActions';
-import { Button } from 'react-bootstrap';
+import { ShoppingBag, ShoppingCart } from '@mui/icons-material';
+import { IconButton, Paper, Typography } from '@mui/material';
+import React, { useContext, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { productContext } from '../../../Contexts/ProductsContext';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+// import ImgCard from '../ImgCard/'
 
-const DetailPage = () => {
-    const dispatch = useDispatch()
-    const params = useParams()
-    const navigate = useNavigate()
-    const user = useSelector((state) => state.userReducer.oneUser)
-    
+const ProductDetail = () => {
+    const {id} = useParams()
+    const { detail, getDetail, checkProductInCart, addToCart } = useContext(productContext)
+    console.log(detail, 'detail')
     useEffect(() => {
-        dispatch(getOneUser(params.id))
-    }, [])
-
-    const handleDelete = () => {
-        dispatch(deleteUser(user.id, toast))
-        navigate('/')
-    }
-
+        getDetail(id)
+    }, [id])
 
     return (
-        <div className="container mt-5">
-      <div className="mb-5">
-        <Link to="/">
-          <Button className="btn-success">Main page</Button>
-        </Link>
-      </div>
-      {user ? (
         <>
-          <ul className="user-info-list">
-            <li>
-              <strong className="key">First name</strong>
-              <span className="value">{user.first_name}</span>
-            </li>
-            <li>
-              <strong className="key">Last name</strong>
-              <span className="value">{user.last_name}</span>
-            </li>
-            <li>
-              <strong className="key">DOB</strong>
-              <span className="value">{user.birth_date}</span>
-            </li>
-            <li>
-              <strong className="key">Gender</strong>
-              <span className="value">{user.gender}</span>
-            </li>
-            <li>
-              <strong className="key">Job</strong>
-              <span className="value">{user.job}</span>
-            </li>
-            <li>
-              <strong className="key">Is active</strong>
-              <span className="value">{user.is_active ? "Yes" : "No"}</span>
-            </li>
-            <li>
-              <strong className="key">Biography</strong>
-              <span className="value">{user.biography}</span>
-            </li>
-          </ul>
-          <div>
-            <Button
-              className="btn-danger"
-              onClick={handleDelete}
-              style={{ marginRight: 10 }}
-            >
-              Delete
-            </Button>
-            <Link to={`/edit/${user.id}`}>
-              <Button>Edit</Button>
-            </Link>
-          </div>
+            <div style={{width: '100', height: '81px', backgroundColor: 'grey'}}></div>
+            <div>
+                <img style={{width: '100%'}} src="https://623a6e1cd70c9dbd3d3c-7dcd1a1af7ff1e866416ef4f946f2c74.ssl.cf3.rackcdn.com/rolex/landing-page-2019/banner_img_1680x260.jpg" />
+            </div>
+            <Paper sx={{width: '100%', height: '100%', padding: "100px 0", boxShadow: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center',}}>
+                <Typography variant='h2' style={{textAlign: 'center'}}>ROLEX</Typography>
+                {
+                    detail ? (
+                        <div  style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'start', padding: 20,  flexWrap: 'wrap'}}>
+                            <div>
+                                <img width='320' src={detail.image}/>
+                            </div>
+                            <div style={{
+                                width: '450px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'flex=start',
+                                textAlign: 'start',
+                                justifyContent: 'center'
+                            }}>
+                                <Typography variant='h5'>{detail.type}</Typography>
+                                <Typography variant='h3' sx={{py: 2}}>{detail.title}</Typography>
+                                <Typography variant='h5'>{detail.description}</Typography>
+                                <div style={{display: 'flex'}}>
+                                    <Typography variant='h4' sx={{py: 2}}>$ {detail.price}</Typography>
+                                    <IconButton sx={{paddingLeft: '50px'}} onClick={() => {
+                                        addToCart(detail)  
+                                        }} 
+                                        color = {checkProductInCart(detail.id) ? 'success' : 'primary'}  
+                                        >
+                                        <ShoppingBag />
+                                    </IconButton>
+                                </div>
+                            </div>
+                        </div>
+                    ): (<h1> Loading . . .</h1>)
+                }
+            </Paper>
         </>
-      ) : null}
-    </div>
     );
 };
 
-export default DetailPage;
+export default ProductDetail;
+
+
+
+
+
+
+
+

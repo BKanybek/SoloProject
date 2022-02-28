@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React, { createContext, useEffect, useReducer, useState } from 'react';
-import { calcSubPrice, calcTotalPrice } from '../Helpers/CalcPrice'
+// import { calcSubPrice, calcTotalPrice } from '../Components/Cart/CalcPrice'
+import { API } from '../Helpers/Const';
+import { auth } from '../Firebase';
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import { auth } from '../Firebass';
-import { API } from '../Helpers/Constants';
+import { calcSubPrice, calcTotalPrice } from '../Components/Cart/CalcPrice/CalcPrice';
+
 
 export const productContext = createContext()
 

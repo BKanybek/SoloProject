@@ -1,13 +1,13 @@
-import { getOptionGroupUnstyledUtilityClass } from '@mui/base';
+// import { getOptionGroupUnstyledUtilityClass } from '@mui/base';
 import { Box, Grid, Pagination, Stack } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useSearchParams} from 'react-router-dom';
-import ProductCard from '../ProductCard/ProductCard';
-import SideBar from '../../Home/SideBar/SideBar'
+// import SideBar from '../../Home/SideBar/SideBar'
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
-import { productContext } from '../../../Contexts/ProductsContext';
+import { productContext } from '../../../ProductContext/ProductContext';
+import ProductCard from '../../ProductCard/ProductCard';
 
 
 
@@ -98,7 +98,6 @@ const ListObject = () => {
     return (
         <div style={{}}>
             <div style={{backgroundColor: 'black', width: '100%',height:' 100px'}}></div>
-            <SideBar />  
             <Search  >
               <SearchIconWrapper  >
                 <SearchIcon  />

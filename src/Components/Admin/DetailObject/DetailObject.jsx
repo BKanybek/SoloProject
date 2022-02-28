@@ -1,12 +1,12 @@
-import { ShoppingBag, ShoppingCart } from '@mui/icons-material';
+import { ShoppingBag } from '@mui/icons-material';
 import { IconButton, Paper, Typography } from '@mui/material';
 import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { productContext } from '../../../Contexts/ProductsContext';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import { productContext } from '../../../ProductContext/ProductContext';
+// import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 // import ImgCard from '../ImgCard/'
 
-const ProductDetail = () => {
+const DetailObject = () => {
     const {id} = useParams()
     const { detail, getDetail, checkProductInCart, addToCart } = useContext(productContext)
     console.log(detail, 'detail')
@@ -58,7 +58,7 @@ const ProductDetail = () => {
     );
 };
 
-export default ProductDetail;
+export default DetailObject;
 
 
 

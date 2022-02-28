@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import { Button, TextField } from '@mui/material';
 import{ Link, useParams } from 'react-router-dom';
-import { productContext } from '../../../Contexts/ProductsContext'
+import { productContext } from '../../../ProductContext/ProductContext';
 
 export default function EditObject  () {
     const [values, setValues] = useState({

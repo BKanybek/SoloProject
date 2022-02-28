@@ -1,24 +1,13 @@
 {
   "objects": [
     {
-      "first_name": "1222",
-      "last_name": "22222",
-      "birth_date": "2021-12-31",
-      "gender": "male",
-      "job": "123123123",
-      "biography": "12312312312",
-      "is_active": true,
+      "title": "1231",
+      "image": "123",
+      "price": 123,
+      "type": "1231",
+      "description": "123",
       "id": 1
-    },
-    {
-      "first_name": "22222222222222222222",
-      "last_name": "22222222222222222",
-      "birth_date": "2021-12-31",
-      "gender": "female",
-      "job": "222222222222222",
-      "biography": "22222222222222222",
-      "is_active": true,
-      "id": 2
     }
-  ]
+  ],
+  "h": []
 }

@@ -11,6 +11,7 @@ import EditObject from './Components/Admin/EditObject/EditObject';
 import DetailObject from './Components/Admin/DetailObject/DetailObject';
 import ListObject from './Components/Admin/ListObject/ListObject';
 import Home from './Components/Home/Home';
+import NavBar from './Components/NavBar/NavBar';
 
 
 
@@ -19,6 +20,7 @@ const MyRoutes = () => {
     return (
         <ProductsContextProvider>
             <BrowserRouter>
+            <NavBar/>
                 <Routes>
                     <Route path='/list' element={<ListObject/>}/>
                     <Route path='/add' element={<AddObject/>} />

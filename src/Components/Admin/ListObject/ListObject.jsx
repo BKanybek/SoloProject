@@ -97,7 +97,7 @@ const ListObject = () => {
 
     return (
         <div style={{}}>
-            <div style={{backgroundColor: 'black', width: '100%',height:' 100px'}}></div>
+            <div style={{backgroundColor: 'white', width: '100%',height:' 100px'}}></div>
             <Search  >
               <SearchIconWrapper  >
                 <SearchIcon  />

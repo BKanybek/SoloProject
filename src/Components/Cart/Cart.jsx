@@ -44,8 +44,7 @@ export default function Cart() {
 
   return (
     <>
-      <div style={{backgroundColor: 'grey', height: '70px'}}></div>
-      <TableContainer  sx={{paddingTop: '50px', display: 'flex', flexWrap: 'wrap'}} component={Paper}>
+      <TableContainer  sx={{display: 'flex', flexWrap: 'wrap'}} component={Paper}>
         <Table sx={{  }} aria-label="customized table">
           <TableHead>
             <TableRow>

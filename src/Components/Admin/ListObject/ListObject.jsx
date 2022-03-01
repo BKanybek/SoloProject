@@ -1,13 +1,16 @@
 // import { getOptionGroupUnstyledUtilityClass } from '@mui/base';
-import { Box, Grid, Pagination, Stack } from '@mui/material';
+// import { Box, Grid, Pagination, Stack } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useSearchParams} from 'react-router-dom';
 // import SideBar from '../../Home/SideBar/SideBar'
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
+// import {InputBase} from '@mui/material';
+
+// import InputBase from '@mui/material/InputBase';
 import { productContext } from '../../../ProductContext/ProductContext';
 import ProductCard from '../../ProductCard/ProductCard';
+import { Box, Grid, Pagination, Stack } from '@mui/material';
 
 
 
@@ -37,19 +40,19 @@ const Search = styled('div')(({ theme }) => ({
     justifyContent: 'center',
   }));
   
-  const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-      transition: theme.transitions.create('width'),
-      width: '100%',
-      [theme.breakpoints.up('md')]: {
-        width: '20ch',
-      },
-    },
-  }));
+  // const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  //   color: 'inherit',
+  //   '& .MuiInputBase-input': {
+  //     padding: theme.spacing(1, 1, 1, 0),
+  //     // vertical padding + font size from searchIcon
+  //     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+  //     transition: theme.transitions.create('width'),
+  //     width: '100%',
+  //     [theme.breakpoints.up('md')]: {
+  //       width: '20ch',
+  //     },
+  //   },
+  // }));
 
 const ListObject = () => {
     const { products, getProducts, paginatedPages } = useContext(productContext)
@@ -102,13 +105,13 @@ const ListObject = () => {
               <SearchIconWrapper  >
                 <SearchIcon  />
               </SearchIconWrapper>
-              <StyledInputBase
+              {/* <StyledInputBase
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }}
                 value={searchVal}
                 onChange={handleValue}
                 sx={{border: '2px solid'}} 
-              />
+              /> */}
           </Search>
 
             <Box sx={{flexGrow: 1, margin: 4}}>

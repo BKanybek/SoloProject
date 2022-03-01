@@ -13,41 +13,33 @@ const Services = () => {
                 <div className="card-list">
                     
                     <div className='card'>
-                        HTML
+                        neurologist
                     </div>
                     <div className='card'>
-                        Css
+                        dentist
                     </div>
                     <div className='card'>
-                        Bootstrap
+                        ultrasound
                     </div>
                     <div className='card'>
-                        Основы JS
+                        x-ray
                     </div>
                     <div className='card'>
-                        Native JS
+                        Psychiatrist
                     </div>
                     <div className='card'>
-                        DOM
+                        Dermatologist
                     </div>
                     <div className='card'>
-                        React
+                        Cardiologist
                     </div>
                     <div className='card'>
-                        React Hooks
+                        Immunologist
                     </div>
                     <div className='card'>
-                        JQuery
+                        Oncologist
                     </div>
                 </div>
-                {/* <div className="pagination-block">
-                    <div><img src={PrevIcon}/></div>
-                    <div>0</div>
-                    <div> <img src={NextIcon}/></div>
-                </div>
-                <div className="edit-block">
-                    <a href="#"> <img src={PenIcon}/>Редактировать</a>
-                </div> */}
             </div>
         </div>
     );

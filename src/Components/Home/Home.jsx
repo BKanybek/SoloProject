@@ -2,14 +2,15 @@ import React from 'react';
 import Footer from '../Footer/Footer';
 // import NavBar from '../NavBar/NavBar';
 import Services from '../Services/Services';
+// import MainImg from '../Images/cimage.jpg'
 
 const Home = () => {
     return (
         <div>
-            <div style={{backgroundColor: 'red', width: '100%', height: '100vh'}}>
+            <div className='main-page'>
                 HELLO1
             </div>
-            <div style={{backgroundColor: 'green', width: '100%', height: '100vh'}}>
+            <div style={{background: 'green', width: '100%', height: '100vh'}}>
                 <div className="container" style={{backgroundColor: 'white', height: '50%'}}>HELLO</div>
                 HELLO2
             </div>

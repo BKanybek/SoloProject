@@ -13,6 +13,9 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { productContext } from '../../ProductContext/ProductContext';
+import { Container, Form, FormControl, Nav, Navbar, NavDropdown, Offcanvas } from 'react-bootstrap';
+import './Navbar.css';
+import Logo from '../Images/symbol-of-caduceus.jpg'
 
 
 
@@ -136,85 +139,86 @@ export default function NavBar() {
   );
 
   
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const returnHomePage = () => {
-    navigate('/')
-  }
+  // const returnHomeP age = () => {
+  //   navigate('/')
+  // }
   
   return (
     <div>
-      <Box sx={{ flexGrow: 1, width: '100%'}}>
-        <AppBar position="static" sx={{ backgroundColor: '#00B9B1', boxShadow: 0, }}  >           
-          <Toolbar sx={{margin: '0 50px'}}>  
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
-
-            {/* <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }}
-                value={searchVal}
-                onChange={handleValue}
-              />
-            </Search> */}
-
-            
-            <Box sx={{ flexGrow: 1 }} />
-
-
-            {currentUser ? (
-              <Button variant='success' disabled={!currentUser} onClick={handleLogOut}>Log Out</Button>
-            ) : null
-          }
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <Link to='/cart'>
-                  <IconButton>
-                      <Badge badgeContent={cartLength} color='secondary' sx={{paddingTop: '10'}}>
-                          <ShoppingCartIcon sx={{color: 'white', marginLeft: '3',marginTop: '5px'}}/>
-                      </Badge>
-                  </IconButton>
-            </Link>
-              <IconButton
-                size="large"
-                edge="end"
-                aria-label="account of current user"
-                aria-controls={menuId}
-                aria-haspopup="true"
-                onClick={handleProfileMenuOpen}
-                color="inherit"
-                
-              >
-                <AccountCircle sx={{marginTop:'3px'}} />
-              </IconButton>
-            </Box>
-            <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-              <IconButton
-                size="large"
-                aria-label="show more"
-                aria-controls={mobileMenuId}
-                aria-haspopup="true"
-                onClick={handleMobileMenuOpen}
-                color="inherit"
-              >
-                <MoreIcon />
-              </IconButton>
-            </Box> 
-          </Toolbar>
-        </AppBar>
-        {renderMobileMenu}
-        {renderMenu}     
-      </Box>
+              <Navbar className='navbar' expand="lg">
+  <Container fluid>
+    <div><img style={{width: '50px', height: '50px'}} src={Logo} alt="" /></div>
+    <Navbar.Toggle aria-controls="navbarScroll" />
+    <Navbar.Collapse id="navbarScroll">
+      {/* <Form className="d-flex">
+          <FormControl
+            type="search"
+            placeholder="Search"
+            className="me-2"
+            aria-label="Search"
+          />
+          <Button variant="outline-success">Search</Button>
+        </Form> */}
+      <Nav
+        className="me-auto my-2 my-lg-0"
+        navbarScroll
+      >
+        <Nav.Link href="/">Home</Nav.Link>
+        <Nav.Link href="#action2">Link</Nav.Link>
+        <NavDropdown title="Link" id="navbarScrollingDropdown">
+          <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+          <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="#action5">
+            Something else here
+          </NavDropdown.Item>
+        </NavDropdown>
+      </Nav>
+      <Box sx={{ flexGrow: 1 }} /> 
+                      {currentUser ? (
+                      <Button variant='success' disabled={!currentUser} onClick={handleLogOut}>Log Out</Button>
+                      ) : null
+                    }
+                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                      <Link to='/cart'>
+                            <IconButton>
+                                <Badge badgeContent={cartLength} color='secondary' sx={{paddingTop: '10'}}>
+                                    <ShoppingCartIcon sx={{color: 'black', marginLeft: '3',marginTop: '5px'}}/>
+                                </Badge>
+                            </IconButton>
+                      </Link>
+                        <IconButton
+                          size="large"
+                          edge="end"
+                          aria-label="account of current user"
+                          aria-controls={menuId}
+                          aria-haspopup="true"
+                          onClick={handleProfileMenuOpen}
+                          color="inherit"
+                        >
+                          <AccountCircle sx={{marginTop:'3px'}} />
+                        </IconButton>
+                      </Box>
+                      <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+                        <IconButton
+                          size="large"
+                          aria-label="show more"
+                          aria-controls={mobileMenuId}
+                          aria-haspopup="true"
+                          onClick={handleMobileMenuOpen}
+                          color="inherit"
+                        >
+                          <MoreIcon />
+                        </IconButton>
+                        {renderMobileMenu}
+                        {renderMenu}   
+                  </Box>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
     </div>
   );
 }
+

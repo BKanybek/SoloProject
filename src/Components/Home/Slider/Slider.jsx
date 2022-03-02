@@ -5,6 +5,7 @@ import './Slider.css';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { productContext } from '../../../ProductContext/ProductContext';
+import { height } from '@mui/system';
 
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -36,7 +37,7 @@ const Slider = () => {
     return (
       <>
         <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', flexWrap: 'wrap' }}>
-          <h1 style={{padding: '0 15px'}}>Our Doctors</h1>
+          <h1 style={{padding: '0 15px', margin: '30px 0'}}>Our Doctors</h1>
         </div>
             <div className='Slider' >
               <Carousel breakPoints={breakPoints} >
@@ -47,7 +48,7 @@ const Slider = () => {
                           <Card>
                             <Link to={`/detail/${item.id}`} style={{textDecoration: 'none', color: 'black'}}> 
                               <CardMedia
-                                // sx={{width: '300px'}}
+                                sx={{width: '250px', height: '160px'}}
                                 component="img"
                                 image={item.image}
                                 alt={item.title}
@@ -58,13 +59,8 @@ const Slider = () => {
                                 </Typography>
                               </CardContent>
                               <CardContent>
-                                <Typography>
-                                  {item.title}
-                                </Typography>
-                              </CardContent>
-                              <CardContent>
                                 <Typography >
-                                    {item.description}
+                                    {item.type}
                                 </Typography>
                               </CardContent>
                             </Link>

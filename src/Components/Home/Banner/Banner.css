@@ -1,0 +1,29 @@
+
+
+
+
+.carousel-item h3, p{
+    font-size: 40px;
+    font-weight: 900;
+}
+
+@media all and (max-width: 900px) {
+    .carousel-item h3, p {
+        font-size: 30px;
+    }
+} 
+
+@media all and (max-width: 700px) {
+    .carousel-item h3, p {
+        font-size: 20px;
+    }
+} 
+
+
+@media all and (max-width: 400px) {
+    .carousel-item h3, p {
+        font-size: 10px;
+    }
+} 
+
+

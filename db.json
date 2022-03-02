@@ -9,19 +9,19 @@
       "id": 1
     },
     {
-      "title": "123",
-      "image": "123",
-      "price": 123,
-      "type": "123",
-      "description": "123",
+      "title": "рентген аппарат GE Proteus XR/a",
+      "image": "https://radio-med.ru/assets/cache_image/New%20systems%20photos/op-proteus_350x350_e7c.jpg",
+      "price": " 2 812 500 ",
+      "type": "equipment",
+      "description": "Рентгеновский  аппарат GE Proteus XR/a предназначен для общих рентгенографических исследований",
       "id": 2
     },
     {
-      "title": "rere",
-      "image": "rere",
-      "price": null,
-      "type": "rere",
-      "description": "rere",
+      "title": "МРТ аппарат Siemens Harmony 1.0T",
+      "image": "https://zelmedservice.ru/upload/iblock/8b0/ge_signa_explorer.jpg",
+      "price": "14 500 000 руб.",
+      "type": "equipment",
+      "description": "Система магнитно-резонансной томографии всего тела, со сверхпроводящим магнитом Philips Ingenia Ambition S. Диагностическая система магнитно-резонансной томографии (МРТ)",
       "id": 3
     },
     {

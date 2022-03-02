@@ -10,7 +10,10 @@ import { styled, alpha } from '@mui/material/styles';
 // import InputBase from '@mui/material/InputBase';
 import { productContext } from '../../../ProductContext/ProductContext';
 import ProductCard from '../../ProductCard/ProductCard';
-import { Box, Grid, Pagination, Stack } from '@mui/material';
+import { Box, Grid, InputBase, Pagination, Stack } from '@mui/material';
+import Filter from './Filter/Filter';
+import './ListObject.css'
+import { Button, Form, FormControl } from 'react-bootstrap';
 
 
 
@@ -40,19 +43,19 @@ const Search = styled('div')(({ theme }) => ({
     justifyContent: 'center',
   }));
   
-  // const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  //   color: 'inherit',
-  //   '& .MuiInputBase-input': {
-  //     padding: theme.spacing(1, 1, 1, 0),
-  //     // vertical padding + font size from searchIcon
-  //     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-  //     transition: theme.transitions.create('width'),
-  //     width: '100%',
-  //     [theme.breakpoints.up('md')]: {
-  //       width: '20ch',
-  //     },
-  //   },
-  // }));
+  const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    color: 'inherit',
+    '& .MuiInputBase-input': {
+      padding: theme.spacing(1, 1, 1, 0),
+      // vertical padding + font size from searchIcon
+      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+      transition: theme.transitions.create('width'),
+      width: '100%',
+      [theme.breakpoints.up('md')]: {
+        width: '20ch',
+      },
+    },
+  }));
 
 const ListObject = () => {
     const { products, getProducts, paginatedPages } = useContext(productContext)
@@ -100,20 +103,18 @@ const ListObject = () => {
 
     return (
         <div style={{}}>
-            <div style={{backgroundColor: 'white', width: '100%',height:' 100px'}}></div>
-            <Search  >
-              <SearchIconWrapper  >
-                <SearchIcon  />
-              </SearchIconWrapper>
-              {/* <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }}
-                value={searchVal}
-                onChange={handleValue}
-                sx={{border: '2px solid'}} 
-              /> */}
-          </Search>
-
+            <Filter /> 
+                <Form className="d-flex justify-content-center p-5">
+                    <FormControl
+                        type="search"
+                        placeholder="Search"
+                        className="me-2"
+                        aria-label="Search"
+                        onChange={handleValue}
+                        style={{width: 'auto'}}
+                    />
+                    <Button variant="outline-success">Search</Button>
+                </Form> 
             <Box sx={{flexGrow: 1, margin: 4}}>
                 <Grid container spacing={{xs: 1, md: 6}} columns={{xs: 1, sm: 3, md: 12}}>
                     {

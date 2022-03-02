@@ -1,11 +1,11 @@
 {
   "products": [
     {
-      "title": "1231",
-      "image": "123",
-      "price": 123,
-      "type": "1231",
-      "description": "123",
+      "title": "Marcus",
+      "image": "https://www.firestock.ru/download/s/7rar6o3ru3kloq9/702_zoom.jpg",
+      "price": "10000",
+      "type": "Doctor",
+      "description": "Dantis",
       "id": 1
     },
     {
@@ -23,6 +23,14 @@
       "type": "rere",
       "description": "rere",
       "id": 3
+    },
+    {
+      "title": "123",
+      "image": "123",
+      "price": 123,
+      "type": "123",
+      "description": "123",
+      "id": 4
     }
   ]
 }

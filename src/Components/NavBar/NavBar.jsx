@@ -1,26 +1,26 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { productContext } from '../../ProductContext/ProductContext';
-import { Container, Form, FormControl, Nav, Navbar, NavDropdown, Offcanvas } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown,} from 'react-bootstrap';
 import './Navbar.css';
 import Logo from '../Images/symbol-of-caduceus.jpg'
+import { equipmentContext } from '../../ProductContext/EquipmentContext';
 
 
 
 export default function NavBar() {
-    const { cartLength, getCartLength, useAuth, logout } = React.useContext(productContext)
+    const { useAuth, logout } = React.useContext(productContext)
+    const { cartLength, getCartLength, } = React.useContext(equipmentContext)
     const [ searchParams, setSearchParams ] = useSearchParams()
     const[ searchVal, setSearchVal ] = React.useState(searchParams.get('q') ? searchParams.get('q') : '')
 
@@ -166,7 +166,7 @@ export default function NavBar() {
         navbarScroll
       >
         <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="#action2">Link</Nav.Link>
+        <Nav.Link href="/list2">Equipment</Nav.Link>
         <NavDropdown title="Link" id="navbarScrollingDropdown">
           <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
           <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>

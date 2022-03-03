@@ -7,20 +7,24 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom';
-// import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-// import ProductStar from '../../ProductStar/ProductStar';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import { equipmentContext } from '../../ProductContext/EquipmentContext';
 import { productContext } from '../../ProductContext/ProductContext';
+// import ProductStar from '../../ProductStar/ProductStar';
 
-export default function ProductCard({item}) {
-    const {deleteProduct, useAuth} = React.useContext(productContext)
+
+export default function EquipmentCard({item}) {
+    const {deleteEquipment, addToCart, checkEquipmentInCart} = React.useContext(equipmentContext)
+    const {useAuth} = React.useContext(productContext)
     const currentUser = useAuth()
+    // console.log(item.id, 'test')
 
 
 
     let icons = (
       <CardActions disableSpacing>
           {currentUser?.email === "admin1@gmail.com" ? (
-              <Link to={`edit/${item.id}`}>
+              <Link to={`equip/${item.id}`}>
                   <IconButton>
                     <EditIcon/>
                   </IconButton>
@@ -29,25 +33,25 @@ export default function ProductCard({item}) {
           } 
 
           {currentUser?.email === "admin1@gmail.com" ? (
-                <IconButton onClick={() => deleteProduct(item.id)}>
+                <IconButton onClick={() => deleteEquipment(item.id)}>
                 <DeleteIcon />
                 </IconButton>
             ) :null
           }
 
-          {/* <IconButton onClick={() => {
+          <IconButton onClick={() => {
             addToCart(item)  
           }} 
-            color = {checkProductInCart(item.id) ? 'success' : 'primary'}  
+            color = {checkEquipmentInCart(item.id) ? 'success' : 'primary'}  
           >
             <ShoppingBagIcon />
-          </IconButton> */}
+          </IconButton>
       </CardActions>
     )
   return (
     <>
           <Card sx={{ maxWidth: 306, minWidth: 306 }}>
-            <Link to={`/detail/${item.id}`} style={{textDecoration: 'none', color: 'black'}}> 
+            <Link to={`/equip/${item.id}`} style={{textDecoration: 'none', color: 'black'}}> 
               <CardMedia 
                 width='300px'
                 component="img"
@@ -56,12 +60,12 @@ export default function ProductCard({item}) {
               /> 
               {currentUser?.email === "admin1@gmail.com" ? (  
                 <Typography sx={{fontSize: '20px', textAlign: 'center'}}>
-                  {item.Name}
+                  {item.type}
                 </Typography>  
                 ): null
               }
               <Typography sx={{fontSize: '20px', color: 'black', textAlign: 'center', paddingTop: '20px'}}>
-                {item.type}
+                {item.title}
               </Typography>
             {currentUser?.email === "admin1@gmail.com" ? ( 
               <Typography sx={{fontSize: '13px', paddingTop: '5px', textAlign: 'center'}}>
@@ -69,6 +73,9 @@ export default function ProductCard({item}) {
               </Typography>
               ): null
             }
+              <Typography sx={{fontSize: '25px', paddingTop: '5px', color: 'black',textAlign: 'center'}}>
+                  $ {item.price}
+              </Typography>  
             </Link>
             <div style={{display: 'flex', justifyContent: 'center', paddingBottom: '10px'}}>
                 {icons}

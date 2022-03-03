@@ -51,11 +51,11 @@ const Slider = () => {
                                 sx={{width: '250px', height: '160px'}}
                                 component="img"
                                 image={item.image}
-                                alt={item.title}
+                                alt={item.name}
                               />
                               <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">
-                                  {item.title}
+                                  {item.name}
                                 </Typography>
                               </CardContent>
                               <CardContent>

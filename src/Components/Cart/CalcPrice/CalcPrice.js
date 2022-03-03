@@ -1,12 +1,12 @@
-export function calcSubPrice(product) {
-    console.log(product, +product.count , +product.item.price, 'calcSub')
-    return product.count * product.item.price
+export function calcSubPrice(equipment) {
+    console.log(equipment, +equipment.count , +equipment.item.price, 'calcSub')
+    return equipment.count * equipment.item.price
 }
 
-export function calcTotalPrice(products) {
+export function calcTotalPrice(equipments) {
     let totalPrice = 0;
 
-    products.forEach(elem => {
+    equipments.forEach(elem => {
         totalPrice += elem.subPrice
     })
     return totalPrice
@@ -14,5 +14,5 @@ export function calcTotalPrice(products) {
 
 export function getCountProductsInCart(){
     let cart = JSON.parse(localStorage.getItem('cart'))
-    return cart ? cart.products.lenght : 0
+    return cart ? cart.equipments.lenght : 0
 }

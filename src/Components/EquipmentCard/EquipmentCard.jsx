@@ -17,7 +17,6 @@ export default function EquipmentCard({item}) {
     const {deleteEquipment, addToCart, checkEquipmentInCart} = React.useContext(equipmentContext)
     const {useAuth} = React.useContext(productContext)
     const currentUser = useAuth()
-    // console.log(item.id, 'test')
 
 
 
@@ -55,26 +54,26 @@ export default function EquipmentCard({item}) {
               <CardMedia 
                 width='300px'
                 component="img"
-                image={item.image}
+                image={item.image1}
                 alt={item.title}
               /> 
               {currentUser?.email === "admin1@gmail.com" ? (  
                 <Typography sx={{fontSize: '20px', textAlign: 'center'}}>
-                  {item.type}
+                  {item.type1}
                 </Typography>  
                 ): null
               }
               <Typography sx={{fontSize: '20px', color: 'black', textAlign: 'center', paddingTop: '20px'}}>
-                {item.title}
+                {item.title1}
               </Typography>
             {currentUser?.email === "admin1@gmail.com" ? ( 
               <Typography sx={{fontSize: '13px', paddingTop: '5px', textAlign: 'center'}}>
-                {item.description}
+                {item.description1}
               </Typography>
               ): null
             }
               <Typography sx={{fontSize: '25px', paddingTop: '5px', color: 'black',textAlign: 'center'}}>
-                  $ {item.price}
+                  $ {item.price1}
               </Typography>  
             </Link>
             <div style={{display: 'flex', justifyContent: 'center', paddingBottom: '10px'}}>

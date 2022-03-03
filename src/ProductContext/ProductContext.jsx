@@ -1,16 +1,13 @@
 import axios from 'axios';
 import React, { createContext, useEffect, useReducer, useState } from 'react';
-// import { calcSubPrice, calcTotalPrice } from '../Components/Cart/CalcPrice'
 import { API } from '../Helpers/Const';
 import { auth } from '../Firebase';
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
-// import { calcSubPrice, calcTotalPrice } from '../Components/Cart/CalcPrice/CalcPrice';
 
 
 export const productContext = createContext()
 
 const INIT_STATE = {
-    equipments: null,
     products: null,
     edit: null,
     cart: {},

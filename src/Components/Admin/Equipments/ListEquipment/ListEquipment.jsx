@@ -72,6 +72,7 @@ const ListEquipments = () => {
     useEffect(() => {
         getEquipments()
     }, [])
+    console.log(equipments, 'hello')
 
     const handleValue = (e) => {
         const search = new URLSearchParams(window.location.search)

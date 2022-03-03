@@ -14,6 +14,8 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import { productContext } from '../../../ProductContext/ProductContext';
+import { firestore } from '../../../Firebase'
+import { addDoc, collection } from 'firebase/firestore';
 
 
 function Copyright(props) {
@@ -42,14 +44,17 @@ export default function Register() {
         console.log({
         email: data.get('email'),
         password: data.get('password'),
+        name: data.get('firstName')
      });
-     handleSignUp(data.get('email'), data.get('password'))
-     navigate('/')
+     handleSignUp(data.get('email'), data.get('password'), data.get("firstName"))
+    //  navigate('/')
     };
 
-    async function handleSignUp(email, password){
+    async function handleSignUp(email, password, name){
         try {
             await signUp(email,password)
+            const docRef = await addDoc(collection(firestore, 'users'), {name: name})
+            console.log(docRef, 'save in firestore')
         } catch (error) {
             alert('Пользователь с такой почтой уже существует')
         }

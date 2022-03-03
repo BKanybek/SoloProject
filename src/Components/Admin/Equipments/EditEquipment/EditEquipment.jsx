@@ -38,7 +38,7 @@ export default function EditEquipment  () {
     }
 
     const handleSave = () => {
-        saveEditedEquipment(values1)
+        saveEditedEquipment({...values1, id})
     }
 
 
@@ -106,9 +106,9 @@ export default function EditEquipment  () {
                         value={values1.description1} variant='outlined' 
                         label='Description'/>
                 </form>
-                <Link to='/list2'>
+                {/* <Link to='/list2'> */}
                     <Button onClick={handleSave} variant='contained' color='warning'>Save</Button>
-                </Link>
+                {/* </Link> */}
                     </div>
             </div>
       </Paper>

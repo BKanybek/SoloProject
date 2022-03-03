@@ -25,7 +25,7 @@ const reducer = (state = INIT_STATE, action) => {
             return {...state, products: action.payload.data, 
                 paginatedPages: Math.ceil(action.payload.headers["x-total-count"] /6)}
         case "GET_EDIT_PRODUCT":
-            return{...state, edit1: action.payload}
+            return{...state, edit: action.payload}
         case "CHANGE_CART_COUNT":
             return{...state, cartLength: action.payload}
         case "GET_CART":

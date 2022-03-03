@@ -22,7 +22,7 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="/">
         Your Website
       </Link>{' '}
       {new Date().getFullYear()}
@@ -40,7 +40,6 @@ export default function Register() {
     const handleSubmit = (event) => {
      event.preventDefault();
      const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
         console.log({
         email: data.get('email'),
         password: data.get('password'),
@@ -56,7 +55,7 @@ export default function Register() {
             const docRef = await addDoc(collection(firestore, 'users'), {name: name})
             console.log(docRef, 'save in firestore')
         } catch (error) {
-            alert('Пользователь с такой почтой уже существует')
+            // alert('Пользователь с такой почтой уже существует')
         }
     }
 

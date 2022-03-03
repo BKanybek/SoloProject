@@ -19,7 +19,7 @@ const breakPoints = [
 const Slider = () => {
     const { products, getProducts } = useContext(productContext)
     const [searchParams, setSearchParams] = useSearchParams()
-    const [limit, setLimit] = useState(6)
+    const [limit, setLimit] = useState()
     const [page, setPage] = useState(searchParams.get('_page') ? searchParams.get("_page") : 1)
 
 

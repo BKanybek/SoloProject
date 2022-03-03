@@ -4,9 +4,10 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { styled } from '@mui/material/styles'
-import {Box, Grid, Paper, FormControl, FormLabel, RadioGroup,    FormControlLabel, Radio, Slider, Button 
+import {Box, Grid, Paper, FormControl, RadioGroup,    FormControlLabel, Radio, Button, Slider 
 } from '@mui/material'
-import { productContext } from '../../../../ProductContext/ProductContext';
+import { equipmentContext } from '../../../../ProductContext/EquipmentContext';
+
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -15,41 +16,41 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
 }));
 
-const Filter = () => {
+const FilterEquipments = () => {
     const search = new URLSearchParams(window.location.search)
     const navigate = useNavigate()
-    const { getProducts } = useContext(productContext)
-    const [type, setType] = useState(search.get('type') || '') 
-    const [price, setPrice] = useState(search.get('price_lte') || 0)
-    
+    const { getEquipments} = useContext(equipmentContext)
+    const [type, setType] = useState(search.get('type1') || '') 
+    const [price, setPrice] = useState(search.get('price1_lte') || 0)
+
     const [searchParams, setSearchParams] = useSearchParams()
 
-    const filterProducts = (key, value) => {
+
+    const filterEquipments = (key, value) => {
         search.set(key, value)
         let newPath = `${window.location.pathname}?${search.toString()}`
         navigate(newPath)
-        setType(search.get('type') || '')
-        setPrice(+search.get('price_lte' || 0))
-        getProducts()
+        setType(search.get('type1') || '')
+        setPrice(+search.get('price1_lte' || 0))
+        getEquipments()
     }
 
     const handleChangeType = (e, value) => {
         search.set(e, value)
         let newPath = `${window.location.pathname}?${search.toString()}`
         navigate(newPath)
-        setType(search.get('type') || '')
-        getProducts()
+        setType(search.get('type1') || '')
+        getEquipments()
     }
 
     const resetFilter = () => {
         navigate('/')
-        setPrice(0)
         setType('')
         setSearchParams({
             '_limit': 6,
             "_page": 1
         })
-        getProducts()
+        getEquipments()
     }
     
     
@@ -66,17 +67,17 @@ const Filter = () => {
                                 aria-label='gender' 
                                 // name='gender1' 
                                 value={type} 
-                                onChange={(e) => handleChangeType("type", e.target.value)}
+                                onChange={(e) => handleChangeType("type1", e.target.value)}
                             >
                                 <FormControlLabel 
-                                    value='men'
+                                    value='equipments'
                                     control={<Radio/>}
-                                    label="Men's"
+                                    label="Equipments"
                                 />
                                 <FormControlLabel
-                                    value='x-ray'
+                                    value='drug'
                                     control={<Radio/>}
-                                    label="X-ray"
+                                    label="Drug"
                                 />
                                 <FormControlLabel
                                     value='accessories'
@@ -88,7 +89,7 @@ const Filter = () => {
                         
                         <Grid sx={{display: 'flex', justifyContent: 'center'}}> 
                             <Slider sx={{color: 'black'}}
-                                onChange={(e) => filterProducts('price_lte', e.target.value)} valueLabelDisplay='auto' max={1000000}
+                                onChange={(e) => filterEquipments('price1_lte', e.target.value)} valueLabelDisplay='auto' max={100000}
                                 value={price}
                                 step={500}
                             />
@@ -105,4 +106,4 @@ const Filter = () => {
     );
 };
 
-export default Filter;
+export default FilterEquipments;

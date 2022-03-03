@@ -1,6 +1,6 @@
 export function calcSubPrice(equipment) {
-    console.log(equipment, +equipment.count , +equipment.item.price, 'calcSub')
-    return equipment.count * equipment.item.price
+    console.log(equipment, +equipment.count , +equipment.item.price1, 'calcSub')
+    return equipment.count * equipment.item.price1
 }
 
 export function calcTotalPrice(equipments) {

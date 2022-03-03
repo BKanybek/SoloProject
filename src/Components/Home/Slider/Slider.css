@@ -5,6 +5,7 @@
   line-height: 25px;
   border-radius: 0;
   font-size: 1em;
+  visibility: visible;
 }
 
 .rec.rec-arrow:hover {

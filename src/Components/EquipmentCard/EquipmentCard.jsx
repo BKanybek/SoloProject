@@ -18,8 +18,7 @@ export default function EquipmentCard({item}) {
     const {useAuth} = React.useContext(productContext)
     const currentUser = useAuth()
 
-
-
+    
     let icons = (
       <CardActions disableSpacing>
           {currentUser?.email === "admin1@gmail.com" ? (

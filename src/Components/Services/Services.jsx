@@ -13,16 +13,16 @@ const Services = () => {
                 <div className="card-list">
                     
                     <div className='card'>
-                        neurologist
+                        Neurologist
                     </div>
                     <div className='card'>
-                        dentist
+                        Dentist
                     </div>
                     <div className='card'>
-                        ultrasound
+                        Ultrasound
                     </div>
                     <div className='card'>
-                        x-ray
+                        X-ray
                     </div>
                     <div className='card'>
                         Psychiatrist

@@ -4,17 +4,23 @@ import Paper from '@mui/material/Paper';
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { productContext } from '../../../ProductContext/ProductContext';
+import { equipmentContext } from '../../../../ProductContext/EquipmentContext';
+import { Link } from 'react-router-dom';
 
-const AddObject = () => {
-    const [values, setValues] = React.useState({
-        name: '',
+
+
+const EquipmentAdd = () => {
+    const [values, setValues] = React.useState({  
+        title: '',
+        image: '',
+        price: '',
         type: '',
         description: '',
-        image: '',
     })
+    
 
-    const { addProduct } = React.useContext(productContext)
+    const { addEquipment } = React.useContext(equipmentContext)
+    
     const navigate = useNavigate()
 
     const handleInp = (e) => {
@@ -27,7 +33,7 @@ const AddObject = () => {
 
     const handleSave = () => {
         if(!values.image) values.image = ''
-        addProduct({...values, price: +values.price})
+        addEquipment({...values, price: +values.price})
         navigate('/')
     }
 
@@ -44,17 +50,18 @@ const AddObject = () => {
       }}
     >
       <Paper elevation={3}>
-        <h1 style={{textAlign: 'center'}}>Добавить персонал</h1>
+        <h1 style={{textAlign: 'center'}}>Добавить Товар</h1>
         <div style={{display: 'flex', justifyContent: 'space-around', color: 'black'}}>
             <div style={{margin: '10px'}}>
-                <img width='300' src={values.image ? values.image : 'https://cdn.pixabay.com/photo/2013/07/13/12/07/avatar-159236_960_720.png' } />
+                <img width='300' src={values.image ? values.image : 'https://avatars.mds.yandex.net/i?id=db5407790c705bcbf366a5e267f9d325-4291590-images-thumbs&n=13'} />
             </div>
             <div style={{
                 width: '450px',
                 display: 'flex',
                 alignItems: 'center',
                 flexDirection: 'column',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                paddingBottom: '20px'
             }}>
                 <form  autoComplete='off' style={{
                     display: 'flex',
@@ -62,12 +69,15 @@ const AddObject = () => {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <TextField style={{padding: '10px'}} name='name' onChange={handleInp} value={values.name} variant='outlined' label='Name'/>
-                    <TextField style={{padding: '10px'}} name='type' onChange={handleInp} value={values.type} variant='outlined' label='Type'/>
+                    <TextField style={{padding: '10px'}} name='title' onChange={handleInp} value={values.title} variant='outlined' label='Title'/>
                     <TextField style={{padding: '10px'}} name='image' onChange={handleInp} value={values.image} variant='outlined' label='Image'/>
+                    <TextField style={{padding: '10px'}} name='price' onChange={handleInp} value={values.price} variant='outlined' label='Price'/>
+                    <TextField style={{padding: '10px'}} name='type' onChange={handleInp} value={values.type} variant='outlined' label='Type'/>
                     <TextField style={{padding: '10px'}} name='description' onChange={handleInp} value={values.description} variant='outlined' label='Description'/>
                 </form>
-                <Button onClick={handleSave} variant="contained" color='warning'>Добавить</Button>
+                <Link to='/list2'>
+                  <Button onClick={handleSave} variant="contained" color='warning'>Добавить</Button>
+                </Link>
             </div>
         </div>
       </Paper>
@@ -75,4 +85,4 @@ const AddObject = () => {
     );
 };
 
-export default AddObject;
+export default EquipmentAdd;

@@ -10,8 +10,8 @@ import Paper from '@mui/material/Paper';
 import { Button, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { productContext } from '../../ProductContext/ProductContext';
 import { calcTotalPrice } from './CalcPrice/CalcPrice';
+import { equipmentContext } from '../../ProductContext/EquipmentContext';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -35,11 +35,10 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 export default function Cart() {
-    const { cart, getCart, changeProductCount, deleteCartProduct } = React.useContext(productContext)
+    const { cart, getCart, changeEquipmentCount, deleteCartEquipment, } = React.useContext(equipmentContext)
     React.useEffect(() => {
         getCart() 
     }, [])
-    console.log()
 
 
   return (
@@ -57,9 +56,9 @@ export default function Cart() {
             </TableRow>
           </TableHead>
           <TableBody>
-              {cart.products ? (
+              {cart.equipments ? (
                   <>
-                  {cart.products.map((elem) => (
+                  {cart.equipments .map((elem) => (
                     <StyledTableRow key={elem.item.id}>
                           <StyledTableCell align='center' component='th' scope='row'>
                               <img width="150" src={elem.item.image} />
@@ -74,13 +73,13 @@ export default function Cart() {
                               <input style={{width: '70px'}}
                                   type='number'
                                   value={elem.count}  
-                                  onChange={(e) => changeProductCount(e.target.value, elem.item.id)}
+                                  onChange={(e) => changeEquipmentCount(e.target.value, elem.item.id)}
                               />
                           </StyledTableCell>
                           <StyledTableCell align='left'>
                               {elem.subPrice}
                           </StyledTableCell>
-                          <StyledTableCell align="center" onClick={() => deleteCartProduct(elem.item.id)}>
+                          <StyledTableCell align="center" onClick={() => deleteCartEquipment(elem.item.id)}>
                               <DeleteIcon/>
                           </StyledTableCell>
                     </StyledTableRow> 
@@ -93,9 +92,9 @@ export default function Cart() {
                       <Typography variant='h4'>Total:</Typography>
                   </TableCell>
                       {
-                          cart.products ? (
+                          cart.equipments ? (
                               <TableCell align='right'>
-                                  <Typography variant='h5'>$ {calcTotalPrice(cart.products)}</Typography>
+                                  <Typography variant='h5'>$ {calcTotalPrice(cart.equipments)}</Typography>
                               </TableCell>
                           ) : (null)
                       }

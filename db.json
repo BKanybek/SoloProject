@@ -1,29 +1,33 @@
 {
-  "products": [
+  "equipments": [
     {
-      "title": "Marcus",
-      "image": "https://www.firestock.ru/download/s/7rar6o3ru3kloq9/702_zoom.jpg",
-      "price": "10000",
-      "type": "Doctor",
-      "description": "Dantis",
+      "title1": "Siemens Magnetom Trio 3T",
+      "image1": "https://volgamedcomp.ru/assets/tpl/img/prodPreview/AMIRA.jpg",
+      "price1": "2222222222",
+      "type1": "2222222222222",
+      "description1": "2222222222222",
+      "image": "",
+      "price": null,
       "id": 1
     },
     {
-      "title": "рентген аппарат GE Proteus XR/a",
-      "image": "https://radio-med.ru/assets/cache_image/New%20systems%20photos/op-proteus_350x350_e7c.jpg",
-      "price": " 2 812 500 ",
-      "type": "equipment",
-      "description": "Рентгеновский  аппарат GE Proteus XR/a предназначен для общих рентгенографических исследований",
+      "title1": "213",
+      "image1": "123123",
+      "price1": 123123,
+      "type1": "123123",
+      "description1": "123123",
       "id": 2
     },
     {
-      "title": "МРТ аппарат Siemens Harmony 1.0T",
-      "image": "https://zelmedservice.ru/upload/iblock/8b0/ge_signa_explorer.jpg",
-      "price": "14 500 000 руб.",
-      "type": "equipment",
-      "description": "Система магнитно-резонансной томографии всего тела, со сверхпроводящим магнитом Philips Ingenia Ambition S. Диагностическая система магнитно-резонансной томографии (МРТ)",
+      "title": "23",
+      "image": "23",
+      "price": 232,
+      "type": "23",
+      "description": "232",
       "id": 3
-    },
+    }
+  ],
+  "products": [
     {
       "title": "123",
       "image": "123",
@@ -31,6 +35,14 @@
       "type": "123",
       "description": "123",
       "id": 4
+    },
+    {
+      "name": "John",
+      "type": "oncologist",
+      "description": "специалист по диагностике и лечению онкологических заболеваний.",
+      "image": "https://media.istockphoto.com/photos/portrait-of-male-doctor-in-white-coat-and-stethoscope-standing-in-picture-id1327024466?b=1&k=20&m=1327024466&s=170667a&w=0&h=vcw4Exhv4pkR8fMVLNXhNESaKq1HbYwJ1iElLlQBxI0=",
+      "price": null,
+      "id": 5
     }
   ]
 }

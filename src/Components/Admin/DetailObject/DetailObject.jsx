@@ -1,30 +1,31 @@
-import { ShoppingBag } from '@mui/icons-material';
-import { IconButton, Paper, Typography } from '@mui/material';
+import {  Paper, Typography } from '@mui/material';
 import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { productContext } from '../../../ProductContext/ProductContext';
-// import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-// import ImgCard from '../ImgCard/'
+import './DetailObject.css'
+
 
 const DetailObject = () => {
     const {id} = useParams()
-    const { detail, getDetail, checkProductInCart, addToCart } = useContext(productContext)
+    const { detail, getDetail } = useContext(productContext)
     console.log(detail, 'detail')
     useEffect(() => {
         getDetail(id)
     }, [id])
 
+
     return (
         <>
-            <div style={{width: '100', height: '81px', backgroundColor: 'grey'}}></div>
-            <div>
-                <img style={{width: '100%'}} src="https://623a6e1cd70c9dbd3d3c-7dcd1a1af7ff1e866416ef4f946f2c74.ssl.cf3.rackcdn.com/rolex/landing-page-2019/banner_img_1680x260.jpg" />
-            </div>
-            <Paper sx={{width: '100%', height: '100%', padding: "100px 0", boxShadow: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center',}}>
-                <Typography variant='h2' style={{textAlign: 'center'}}>ROLEX</Typography>
+            <Paper style={{  
+                backgroundImage: `url('https://phonoteka.org/uploads/posts/2021-04/1619713229_31-phonoteka_org-p-fon-dlya-prezentatsii-bolnitsa-32.jpg')`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat'
+                }} sx={{width: '100%', height: '75vh', boxShadow: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center',}}>
+                <Typography className='title' variant='h2' style={{textAlign: 'center', paddingBottom: '20px'}}>О специалисте</Typography>
                 {
                     detail ? (
-                        <div  style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'start', padding: 20,  flexWrap: 'wrap'}}>
+                        <div  style={{ background: 'white', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'start', padding: 20,  flexWrap: 'wrap'}}>
                             <div>
                                 <img width='320' src={detail.image}/>
                             </div>
@@ -34,20 +35,21 @@ const DetailObject = () => {
                                 flexDirection: 'column',
                                 alignItems: 'flex=start',
                                 textAlign: 'start',
-                                justifyContent: 'center'
+                                justifyContent: 'center',
+                                padding: '0 30px',
+
                             }}>
-                                <Typography variant='h5'>{detail.type}</Typography>
-                                <Typography variant='h3' sx={{py: 2}}>{detail.title}</Typography>
+                                <Typography sx={{paddingBottom: '25px'}} variant='h4'>{detail.name}</Typography>
+                                <Typography sx={{paddingBottom: '10px'}} variant='h5'>{detail.type}</Typography>
                                 <Typography variant='h5'>{detail.description}</Typography>
                                 <div style={{display: 'flex'}}>
-                                    <Typography variant='h4' sx={{py: 2}}>$ {detail.price}</Typography>
-                                    <IconButton sx={{paddingLeft: '50px'}} onClick={() => {
+                                    {/* <IconButton sx={{paddingLeft: '50px'}} onClick={() => {
                                         addToCart(detail)  
                                         }} 
                                         color = {checkProductInCart(detail.id) ? 'success' : 'primary'}  
                                         >
                                         <ShoppingBag />
-                                    </IconButton>
+                                    </IconButton> */}
                                 </div>
                             </div>
                         </div>

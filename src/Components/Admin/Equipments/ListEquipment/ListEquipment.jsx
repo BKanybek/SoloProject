@@ -7,7 +7,8 @@ import { Button, Form, FormControl } from 'react-bootstrap';
 import { equipmentContext } from '../../../../ProductContext/EquipmentContext';
 import EquipmentCard from '../../../EquipmentCard/EquipmentCard';
 import './ListEquipments.css'
-// import Filter from '../../ListObject/Filter/Filter';
+import FilterEquipments from './FilterEquipments';
+
 
 
 
@@ -55,7 +56,7 @@ const ListEquipments = () => {
     const { equipments, getEquipments, paginatedPages } = useContext(equipmentContext)
     const search = new URLSearchParams(window.location.search)
     const [searchParams, setSearchParams] = useSearchParams()
-    const [limit, setLimit] = useState(10)
+    const [limit, setLimit] = useState(9)
     const[ searchVal, setSearchVal ] = React.useState(searchParams.get('q') ? searchParams.get('q') : '')
     const [page, setPage] = useState(searchParams.get('_page') ? searchParams.get("_page") : 1)
     const navigate = useNavigate()
@@ -72,7 +73,7 @@ const ListEquipments = () => {
     useEffect(() => {
         getEquipments()
     }, [])
-    console.log(equipments, 'hello')
+
 
     const handleValue = (e) => {
         const search = new URLSearchParams(window.location.search)
@@ -98,7 +99,7 @@ const ListEquipments = () => {
 
     return (
         <div style={{}}>
-            {/* <Filter />  */}
+            <FilterEquipments /> 
                 <Form className="d-flex justify-content-center p-5">
                     <FormControl
                         type="search"
@@ -108,7 +109,6 @@ const ListEquipments = () => {
                         onChange={handleValue}
                         style={{width: 'auto'}}
                     />
-                    <Button variant="outline-success">Search</Button>
                 </Form> 
             <Box sx={{flexGrow: 1, margin: 4}}>
                 <Grid container spacing={{xs: 1, md: 6}} columns={{xs: 1, sm: 3, md: 12}}>

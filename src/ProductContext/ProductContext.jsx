@@ -93,113 +93,6 @@ const ProductsContextProvider = ({children}) => {
             console.log(error);
         }
     }
-    //! Add To CArt  dobavlenie v korzinu (localstorage)
-
-    // const addToCart = (product) => {
-    //     let cart = JSON.parse(localStorage.getItem('cart'));
-    //     if(!cart){
-    //         cart = {
-    //             products: [],
-    //             totalPrice: 0
-    //         }
-    //     }
-    //     let newProduct = {
-    //         item: product,
-    //         count: 1,
-    //         subPrice: 0
-    //     }
-    //     let filteredCart = checkProductInCart(product.id)
-
-    //     if (filteredCart === true ) {
-    //         cart.products = cart.products.filter(elem => elem.item.id !== product.id )
-    //     }else{
-    //         cart.products.push(newProduct)
-    //     }
-    //     newProduct.subPrice = calcSubPrice (newProduct)
-    //     cart.totalPrice = calcTotalPrice(cart.products)
-    //     localStorage.setItem('cart', JSON.stringify(cart))
-    //     dispatch({
-    //         type: "CHANGE_CART_COUNT",
-    //         payload: cart.products.length
-    //     })
-       
-    // }
-
-    
-    // const getCartLength = () => { 
-    //     let cart = JSON.parse(localStorage.getItem('cart'));
-    //     if(!cart){
-    //         cart = {
-    //             products: [],
-    //             totalPrice: 0
-    //         }
-    // }
-    
-
-    // dispatch({
-    //     type: "CHANGE_CART_COUNT",
-    //     payload: cart.products.length
-    // })
-    // }
-
-    // const getCart = () => { 
-    //     let cart = JSON.parse(localStorage.getItem('cart'));
-    //     if(!cart){
-    //         cart = {
-    //             products: [],
-    //             totalPrice: 0
-    //         }
-    // }
-    // dispatch({
-    //     type: "GET_CART",
-    //     payload: cart
-    // })
-    // }
- 
-    // const changeProductCount = (count, id) => {
-    //     let cart = JSON.parse(localStorage.getItem('cart'))
-    //     cart.products = cart.products.map(elem => {
-    //         if(elem.item.id === id && count >= 0){ 
-    //                 elem.count = count
-    //                 elem.subPrice = calcSubPrice(elem)
-    //         }
-    //         return elem
-    //     })
-    //     cart.totalPrice = calcTotalPrice(cart.products)
-    //     localStorage.setItem('cart', JSON.stringify(cart))
-    //     getCart()
-    // }
-    
-    //! check product in cart
-
-
-
-    // const checkProductInCart = (id) =>  {
-    //     let cart = JSON.parse(localStorage.getItem('cart'))
-    //     if(!cart){
-    //         cart = {
-    //             products: [],
-    //             totalPrice: 0
-    //         }
-    //     }
-    //     let newCart = cart.products.filter(elem => elem.item.id === id)
-    //     return newCart.length > 0 ? true : false
-    // }
-
-    // function deleteCartProduct(id){
-    //     let toDelete = JSON.parse(localStorage.getItem("cart"));
-    //     toDelete.products = toDelete.products.filter(
-    //       (elem) => elem.item.id !== id
-    //     );
-    //     localStorage.setItem("cart", JSON.stringify(toDelete))
-    //     getCart()
-        
-    //     dispatch({
-    //         type: "CHANGE_CART_COUNT",
-    //         payload: toDelete.products.length
-    //     })
-    //   }
-  
 
 
     //! GEt Detail
@@ -213,15 +106,6 @@ const ProductsContextProvider = ({children}) => {
         dispatch(action)
     }
 
-    // function deleteCartPayment(){
-    //     localStorage.clear()
-    //     let action = {
-    //         type: "CHANGE_CART_COUNT",
-    //         payload: 0
-    //     }
-    //     dispatch(action)
-        
-    // }
 
     //! Sign IN / sign up
 
@@ -243,6 +127,7 @@ const ProductsContextProvider = ({children}) => {
             return unsub
         }, [])
         return currentUser
+        console.log(currentUser.email)
     }
 
     return (

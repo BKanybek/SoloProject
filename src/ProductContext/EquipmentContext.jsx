@@ -1,10 +1,8 @@
 import axios from 'axios';
 import React, { createContext, useReducer} from 'react';
-// import { calcSubPrice, calcTotalPrice } from '../Components/Cart/CalcPrice'
-import { API2 } from '../Helpers/Const';
-// import { auth } from '../Firebase';
-// import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { calcSubPrice, calcTotalPrice } from '../Components/Cart/CalcPrice/CalcPrice';
+import { API2 } from '../Helpers/Const';
+
 
 
 export const equipmentContext = createContext()

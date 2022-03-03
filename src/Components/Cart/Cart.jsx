@@ -61,13 +61,13 @@ export default function Cart() {
                   {cart.equipments .map((elem) => (
                     <StyledTableRow key={elem.item.id}>
                           <StyledTableCell align='center' component='th' scope='row'>
-                              <img width="150" src={elem.item.image} />
+                              <img width="150" src={elem.item.image1} />
                           </StyledTableCell>
                           <StyledTableCell align='center'>
-                              {elem.item.title}
+                              {elem.item.title1}
                           </StyledTableCell>
                           <StyledTableCell align='center'>
-                            $  {elem.item.price}
+                            $  {elem.item.price1}
                           </StyledTableCell>
                           <StyledTableCell align='center'>
                               <input style={{width: '70px'}}

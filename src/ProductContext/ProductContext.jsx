@@ -127,7 +127,6 @@ const ProductsContextProvider = ({children}) => {
             return unsub
         }, [])
         return currentUser
-        console.log(currentUser.email)
     }
 
     return (

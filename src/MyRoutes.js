@@ -17,6 +17,8 @@ import EquipmentContextProvider from './ProductContext/EquipmentContext';
 import ListEquipments from './Components/Admin/Equipments/ListEquipment/ListEquipment';
 import DetailEquipment from './Components/Admin/Equipments/DetailEquipment/DetailEquipment';
 import EditEquipment from './Components/Admin/Equipments/EditEquipment/EditEquipment';
+import Stream from './Components/Comments/Stream';
+// import StreamRoom from './Components/StreamRoom/StreamRoom';
 
 
 
@@ -42,6 +44,8 @@ const MyRoutes = () => {
                         <Route path='/list2' element={<ListEquipments/>} />
                         <Route path='/equip/:id' element={<DetailEquipment/>} />
                         <Route path='/list2/equip/:id' element={<EditEquipment/>} />
+                        <Route path='/comment' element={<Stream/>} />
+                        {/* <Route path='/comment' element={<StreamRoom/>} /> */}
                         {/* <Route path='/star' element={<ProductStar/>} /> */}
                     </Routes>
                 </BrowserRouter>

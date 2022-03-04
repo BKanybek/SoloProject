@@ -146,5 +146,39 @@
       "price": null,
       "id": 7
     }
+  ],
+  "comments": [
+    {
+      "id": "9hbnt3epy",
+      "body": "hello",
+      "parentId": null,
+      "userId": "1",
+      "username": "Пользователь",
+      "createdAt": "2022-03-04T13:56:16.865Z"
+    },
+    {
+      "id": "hrlhvszyd",
+      "body": "BEKA",
+      "parentId": null,
+      "userId": "1",
+      "username": "Пользователь",
+      "createdAt": "2022-03-04T14:00:24.874Z"
+    },
+    {
+      "id": "40g2rd63w",
+      "body": "AIYMA",
+      "parentId": null,
+      "userId": "1",
+      "username": "Пользователь",
+      "createdAt": "2022-03-04T14:57:39.238Z"
+    },
+    {
+      "id": "b9xr3v2tv",
+      "body": "KSKSKSKSKSKSKKSKS",
+      "parentId": null,
+      "userId": "1",
+      "username": "Пользователь",
+      "createdAt": "2022-03-04T14:59:15.613Z"
+    }
   ]
 }

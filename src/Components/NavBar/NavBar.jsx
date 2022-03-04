@@ -8,6 +8,8 @@ import Menu from '@mui/material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { productContext } from '../../ProductContext/ProductContext';
@@ -20,7 +22,7 @@ import { equipmentContext } from '../../ProductContext/EquipmentContext';
 
 export default function NavBar() {
     const { useAuth, logout } = React.useContext(productContext)
-    const { cartLength, getCartLength, } = React.useContext(equipmentContext)
+    const { cartLength, getCartLength, starLength } = React.useContext(equipmentContext)
     const [ searchParams, setSearchParams ] = useSearchParams()
     const[ searchVal, setSearchVal ] = React.useState(searchParams.get('q') ? searchParams.get('q') : '')
 
@@ -123,6 +125,15 @@ export default function NavBar() {
         </IconButton>
         </Link>
 
+        <Link to='/favorite' style={{color: 'red'}}>
+ 
+           <IconButton color='inherit'>
+                <Badge badgeContent={starLength} color="secondary">
+                    <FavoriteIcon/>
+                </Badge>
+            </IconButton>
+        </Link>
+
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -188,6 +199,13 @@ export default function NavBar() {
                                     <ShoppingCartIcon sx={{color: 'black', marginLeft: '3',marginTop: '5px'}}/>
                                 </Badge>
                             </IconButton>
+                      </Link>
+                      <Link to='/favorite' style={{color: 'white'}}>
+                        <IconButton>
+                           <Badge badgeContent={starLength} color='secondary'>
+                              <FavoriteIcon sx={{color: 'red'}}/>
+                           </Badge>
+                        </IconButton>
                       </Link>
                         <IconButton
                           size="large"

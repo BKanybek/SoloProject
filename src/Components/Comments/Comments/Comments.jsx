@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import CommentForm from "./CommentForm";
 import Comment from "./Comment";
 import '../Comment.css'
@@ -8,6 +8,8 @@ import {
   updateComment as updateCommentApi,
   deleteComment as deleteCommentApi,
 } from "./api";
+import { equipmentContext } from "../../../ProductContext/EquipmentContext";
+
 
 const Comments = ({ commentsUrl, currentUserId }) => {
   const [backendComments, setBackendComments] = useState([]);
@@ -15,6 +17,8 @@ const Comments = ({ commentsUrl, currentUserId }) => {
   const rootComments = backendComments.filter(
     (backendComment) => backendComment.parentId === null
   );
+  console.log(backendComments, 'test')
+  const { createCommentAdd } = useContext(equipmentContext)
   const getReplies = (commentId) =>
     backendComments
       .filter((backendComment) => backendComment.parentId === commentId)
@@ -24,6 +28,7 @@ const Comments = ({ commentsUrl, currentUserId }) => {
       );
   const addComment = (text, parentId) => {
     createCommentApi(text, parentId).then((comment) => {
+      createCommentAdd(comment)
       setBackendComments([comment, ...backendComments]);
       setActiveComment(null);
     });

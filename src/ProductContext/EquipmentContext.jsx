@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { createContext, useReducer} from 'react';
 import { calcSubPrice, calcTotalPrice } from '../Components/Cart/CalcPrice/CalcPrice';
-import { API2 } from '../Helpers/Const';
+import { API2, API_COMMENTS } from '../Helpers/Const';
 
 
 
@@ -9,9 +9,12 @@ export const equipmentContext = createContext()
 
 const INIT_STATE = {
     equipments: null,
+    comments: null,
     edit: null,
     cart: {},
     cartLength: 0,
+    star: {},
+    starLength: 0,
     paginatedPages: 1,
     detail: {},    
 }
@@ -29,6 +32,12 @@ const reducer = (state = INIT_STATE, action) => {
             return{...state, cart: action.payload}  
         case "GET_DETAIL_EQUIPMENTS":
             return{...state, detail: action.payload}
+        case "СHANGE_STAR_COUNT":
+            return{...state, starLength: action.payload}
+        case "GET_STAR":
+             return{...state, star: action.payload}  
+        case "GET_COMMENTS":
+            return{...state, comments: action.payload.data}
         default: 
             return state
     }
@@ -224,27 +233,114 @@ const EquipmentContextProvider = ({children}) => {
         
     }
 
-    //! Sign IN / sign up
+    // комментарии
 
-    // function signUp(email, password){
-    //     return createUserWithEmailAndPassword(auth, email, password)
-    // }
-    // function signIn(email, password){
-    //     return signInWithEmailAndPassword(auth, email, password)
-    // }
+    const createCommentAdd = async (newComment) => {
+        try{
+            const data = await axios.post(API_COMMENTS, newComment)
+        }catch(err){
+            console.log(err)
+        }
+    }
+
+    const 
+
+    const getСomments = async () => {
+        try {
+            let res = await axios.get(`${API_COMMENTS}`)
+            let action = {
+                type: "GET_COMMENTS",
+                payload: res
+            }
+            
+            dispatch(action)
     
-    // function logout(){
-    //     return signOut(auth)
-    // }
-    // function useAuth(){             
-    //     const [currentUser, setCurrentUser] = useState() 
+        } catch (error) {
+            alert(error)
+        }
+    }
 
-    //     useEffect(() => { 
-    //         const unsub = onAuthStateChanged(auth, user => setCurrentUser(user))
-    //         return unsub
-    //     }, [])
-    //     return currentUser
-    // }
+// Избранное
+
+      const addToStar = (equipment) => {
+        let star = JSON.parse(localStorage.getItem('star'));
+        if(!star) {
+            star = {
+                equipments: [],
+            }
+        }
+        let newProduct = {
+            item: equipment,
+            count: 1,
+        }
+        let filteredStar = chekProductInStar(equipment.id)
+        if(filteredStar === true) {
+            star.equipments = star.equipments.filter(elem => elem.item.id !== equipment.id )
+        }
+        else{
+            star.equipments.push(newProduct)
+        }
+        // newProduct.subPrice = calcSubPrice(newProduct)
+        // cart.totalPrice = calcTotalPrice(cart.products)
+        localStorage.setItem('star', JSON.stringify(star))
+        dispatch({
+            type: 'CHANGE_STAR_COUNT',
+            payload: star.equipments.length
+        })
+    }
+      const getStarLength = () => {
+        let star = JSON.parse(localStorage.getItem('star'));
+        if(!star) {
+            star = {
+                equipments: [],
+            }
+        }
+        dispatch({
+            type: 'CHANGE_STAR_COUNT',
+            payload: star.equipments.length 
+        })
+    }
+   
+    // !для стягивания и отображения данных с корзины
+        const getStar = () => {
+            let star = JSON.parse(localStorage.getItem('star'));
+        if(!star) {
+            star = {
+                equipments: [],
+                
+            }
+        }
+        dispatch({
+            type: 'GET_STAR',
+            payload: star
+        })
+        }
+        const chekProductInStar = (id) => {
+            let star = JSON.parse(localStorage.getItem('star'))
+            if(!star) {
+                star= {
+                    equipments: [],
+                }
+            }
+            let newStar = star.equipments.filter(elem => elem.item.id === id)
+            // console.log(newCart);
+            return newStar.length = 0 ? true : false
+        }
+               // ! DELETEPRODUCTINstar
+               const deleteProductInStar = (id) => {
+                let toDelete = JSON.parse(localStorage.getItem('star'));
+                toDelete.equipments =toDelete.equipments.filter(
+                    (elem) => elem.item.id !== id
+                );
+                localStorage.setItem('star', JSON.stringify(toDelete))
+                getStar()
+                dispatch({
+                    type: "CHANGE_STAR_COUNT",
+                    payload: toDelete.equipments.length
+                })
+            }
+
+
 
     return (
         <equipmentContext.Provider value={{
@@ -265,12 +361,22 @@ const EquipmentContextProvider = ({children}) => {
             // useAuth,
             deleteCartEquipment,
             deleteCartPayment,
+            createCommentAdd,
+            addToStar,
+            getStarLength,
+            getStar,
+            chekProductInStar,
+            deleteProductInStar,
+            getСomments,
             edit: state.edit,
             equipments: state.equipments,
             cartLength: state.cartLength,
             cart: state.cart,
             paginatedPages: state.paginatedPages,
-            detail: state.detail
+            detail: state.detail,
+            starLength: state.starLength,
+            star: state.star,
+            comments: state.comments
         }}>
             {children}
         </equipmentContext.Provider>

@@ -146,5 +146,23 @@
       "price": null,
       "id": 7
     }
+  ],
+  "comments": [
+    {
+      "id": "9hbnt3epy",
+      "body": "hello",
+      "parentId": null,
+      "userId": "1",
+      "username": "Пользователь",
+      "createdAt": "2022-03-04T13:56:16.865Z"
+    },
+    {
+      "id": "hrlhvszyd",
+      "body": "BEKA",
+      "parentId": null,
+      "userId": "1",
+      "username": "Пользователь",
+      "createdAt": "2022-03-04T14:00:24.874Z"
+    }
   ]
 }

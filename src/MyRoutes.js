@@ -18,6 +18,7 @@ import ListEquipments from './Components/Admin/Equipments/ListEquipment/ListEqui
 import DetailEquipment from './Components/Admin/Equipments/DetailEquipment/DetailEquipment';
 import EditEquipment from './Components/Admin/Equipments/EditEquipment/EditEquipment';
 import Stream from './Components/Comments/Stream';
+import Favorite from './Components/Favorite/Favorite';
 // import StreamRoom from './Components/StreamRoom/StreamRoom';
 
 
@@ -45,6 +46,7 @@ const MyRoutes = () => {
                         <Route path='/equip/:id' element={<DetailEquipment/>} />
                         <Route path='/list2/equip/:id' element={<EditEquipment/>} />
                         <Route path='/comment' element={<Stream/>} />
+                        <Route path='/favorite' element={<Favorite/>} />
                         {/* <Route path='/comment' element={<StreamRoom/>} /> */}
                         {/* <Route path='/star' element={<ProductStar/>} /> */}
                     </Routes>

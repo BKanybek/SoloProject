@@ -10,11 +10,12 @@ import { Link } from 'react-router-dom';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import { equipmentContext } from '../../ProductContext/EquipmentContext';
 import { productContext } from '../../ProductContext/ProductContext';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 // import ProductStar from '../../ProductStar/ProductStar';
 
 
 export default function EquipmentCard({item}) {
-    const {deleteEquipment, addToCart, checkEquipmentInCart} = React.useContext(equipmentContext)
+    const {deleteEquipment, addToCart, addToStar, chekProductInStar, checkEquipmentInCart} = React.useContext(equipmentContext)
     const {useAuth} = React.useContext(productContext)
     const currentUser = useAuth()
 
@@ -43,6 +44,13 @@ export default function EquipmentCard({item}) {
             color = {checkEquipmentInCart(item.id) ? 'success' : 'primary'}  
           >
             <ShoppingBagIcon />
+          </IconButton>
+          <IconButton onClick={() => {
+            addToStar(item) 
+          }}
+            color = {chekProductInStar(item.id) ? 'secondary': 'inherit'}
+             >
+              <FavoriteIcon/>
           </IconButton>
       </CardActions>
     )

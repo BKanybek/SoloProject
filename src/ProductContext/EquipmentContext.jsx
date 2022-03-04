@@ -35,7 +35,9 @@ const reducer = (state = INIT_STATE, action) => {
         case "СHANGE_STAR_COUNT":
             return{...state, starLength: action.payload}
         case "GET_STAR":
-             return{...state, star: action.payload}   
+             return{...state, star: action.payload}  
+        case "GET_COMMENTS":
+            return{...state, comments: action.payload.data}
         default: 
             return state
     }
@@ -231,16 +233,34 @@ const EquipmentContextProvider = ({children}) => {
         
     }
 
+    // комментарии
 
     const createCommentAdd = async (newComment) => {
         try{
             const data = await axios.post(API_COMMENTS, newComment)
-            console.log(data, 'data')
         }catch(err){
             console.log(err)
         }
     }
 
+    const 
+
+    const getСomments = async () => {
+        try {
+            let res = await axios.get(`${API_COMMENTS}`)
+            let action = {
+                type: "GET_COMMENTS",
+                payload: res
+            }
+            
+            dispatch(action)
+    
+        } catch (error) {
+            alert(error)
+        }
+    }
+
+// Избранное
 
       const addToStar = (equipment) => {
         let star = JSON.parse(localStorage.getItem('star'));
@@ -347,6 +367,7 @@ const EquipmentContextProvider = ({children}) => {
             getStar,
             chekProductInStar,
             deleteProductInStar,
+            getСomments,
             edit: state.edit,
             equipments: state.equipments,
             cartLength: state.cartLength,
@@ -355,6 +376,7 @@ const EquipmentContextProvider = ({children}) => {
             detail: state.detail,
             starLength: state.starLength,
             star: state.star,
+            comments: state.comments
         }}>
             {children}
         </equipmentContext.Provider>

@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { productContext } from '../../../ProductContext/ProductContext';
 
 const AddObject = () => {
@@ -67,7 +67,9 @@ const AddObject = () => {
                     <TextField style={{padding: '10px'}} name='image' onChange={handleInp} value={values.image} variant='outlined' label='Image'/>
                     <TextField style={{padding: '10px'}} name='description' onChange={handleInp} value={values.description} variant='outlined' label='Description'/>
                 </form>
-                <Button onClick={handleSave} variant="contained" color='warning'>Добавить</Button>
+                <Link to='/list'>
+                 <Button onClick={handleSave} variant="contained" color='warning'>Добавить</Button>  
+                </Link>
             </div>
         </div>
       </Paper>

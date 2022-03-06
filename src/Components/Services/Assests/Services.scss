@@ -26,6 +26,7 @@
     padding-bottom: 50px;
     grid-gap: 40px;
     height: 300px;
+    margin: 0;
     .card{
         background: #075095;
         max-height: 225px;
@@ -39,6 +40,7 @@
         text-align: center;
         align-items: center;
         opacity: 0.8;
+        margin: 0;
         &:hover{
             background: #075095;
             color: #ffffff;
@@ -47,14 +49,18 @@
         }
     }
     @media all and (max-width: 767px){
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-        height: 700px;
+        .card-list{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            height: 700px;
+        }
     }
     @media all and (max-width: 505px){
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(9, 1fr);
-        height: 700px;
+        .card-list{
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(9, 1fr);
+            height: 620px;
+        }    
     }
 }
 
@@ -79,7 +85,7 @@
     margin-top: 30px;
     // font-family: $montserratFont;
     font-size: 18px;
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
     a{
         align-items: center;
         justify-content: center;
@@ -87,7 +93,7 @@
         grid-template-columns: 40px 1fr;
         @media all and (max-width: 479px){
             justify-content: center;
-            margin: 10px 0;
+            // margin: 10px 0;
         }
     }
 }

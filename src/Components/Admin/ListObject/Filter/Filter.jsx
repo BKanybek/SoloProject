@@ -57,9 +57,9 @@ const Filter = () => {
         <Box sx={{ flexGrow: 1, display: 'flex', paddingTop: '10px'}}>
             <Grid container spacing={1} sx={{display: 'flex', justifyContent: 'center', paddingTop: '50px', boxShadow: 'none', margin: '0 10px'}}>
                 <Grid>
-                    <Paper sx={{boxShadow: 'none', display: 'flex', flexDirection: 'column'}}>
+                    <Paper sx={{boxShadow: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                         <FormControl component='fieldset'>
-                            <RadioGroup    
+                            <RadioGroup     
                                 row
                                 aria-labelledby="demo-row-radio-buttons-group-label"
                                 name="row-radio-buttons-group"
@@ -69,9 +69,24 @@ const Filter = () => {
                                 onChange={(e) => handleChangeType("type", e.target.value)}
                             >
                                 <FormControlLabel 
-                                    value='men'
+                                    value='surgeon'
                                     control={<Radio/>}
-                                    label="Men's"
+                                    label="Surgeon"
+                                />
+                                <FormControlLabel 
+                                    value='ophthalmologist'
+                                    control={<Radio/>}
+                                    label="Ophthalmologist"
+                                />
+                                <FormControlLabel 
+                                    value='oncologist'
+                                    control={<Radio/>}
+                                    label="Oncologist"
+                                />
+                                <FormControlLabel 
+                                    value='oncologist'
+                                    control={<Radio/>}
+                                    label="Oncologist"
                                 />
                                 <FormControlLabel
                                     value='x-ray'
@@ -86,14 +101,14 @@ const Filter = () => {
                             </RadioGroup>
                         </FormControl>
                         
-                        <Grid sx={{display: 'flex', justifyContent: 'center'}}> 
+                        {/* <Grid sx={{display: 'flex', justifyContent: 'center'}}> 
                             <Slider sx={{color: 'black'}}
                                 onChange={(e) => filterProducts('price_lte', e.target.value)} valueLabelDisplay='auto' max={1000000}
                                 value={price}
                                 step={500}
                             />
-                        </Grid>
-                        <Button sx={{background: 'black'}} onClick={resetFilter}
+                        </Grid> */}
+                        <Button sx={{ maxWidth: '300px',background: 'black'}} onClick={resetFilter}
                             variant='contained'>
                             Сбросить
                         </Button>

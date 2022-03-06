@@ -11,6 +11,7 @@ const INIT_STATE = {
     equipments: null,
     comments: null,
     edit: null,
+    editStream: null,
     cart: {},
     cartLength: 0,
     star: {},
@@ -20,7 +21,7 @@ const INIT_STATE = {
 }
 
 const reducer = (state = INIT_STATE, action) => {
-    switch(action.type){
+    switch(action.type){  
         case "GET_EQUIPMENTS":
             return {...state, equipments: action.payload.data, 
                 paginatedPages: Math.ceil(action.payload.headers["x-total-count"] /6)}
@@ -38,6 +39,8 @@ const reducer = (state = INIT_STATE, action) => {
              return{...state, star: action.payload}  
         case "GET_COMMENTS":
             return{...state, comments: action.payload.data}
+        case "GET_EDIT_COMMENTS":
+            return{...state, editStream: action.payload.data}
         default: 
             return state
     }
@@ -97,7 +100,7 @@ const EquipmentContextProvider = ({children}) => {
      //! save edited Product
 
      const saveEditedEquipment = async (updatedEquipment) => {
-         console.log(updatedEquipment, 'here')
+        //  console.log(updatedEquipment, 'here')
         try {
             await axios.patch(`${API2}/${updatedEquipment.id}`, updatedEquipment)
             getEquipments()
@@ -233,32 +236,7 @@ const EquipmentContextProvider = ({children}) => {
         
     }
 
-    // комментарии
-
-    const createCommentAdd = async (newComment) => {
-        try{
-            const data = await axios.post(API_COMMENTS, newComment)
-        }catch(err){
-            console.log(err)
-        }
-    }
-
-    const 
-
-    const getСomments = async () => {
-        try {
-            let res = await axios.get(`${API_COMMENTS}`)
-            let action = {
-                type: "GET_COMMENTS",
-                payload: res
-            }
-            
-            dispatch(action)
-    
-        } catch (error) {
-            alert(error)
-        }
-    }
+   
 
 // Избранное
 
@@ -269,23 +247,23 @@ const EquipmentContextProvider = ({children}) => {
                 equipments: [],
             }
         }
-        let newProduct = {
+        let newEquipment= {
             item: equipment,
             count: 1,
         }
-        let filteredStar = chekProductInStar(equipment.id)
+        let filteredStar = checkEquipmentsInStar(equipment.id)
         if(filteredStar === true) {
             star.equipments = star.equipments.filter(elem => elem.item.id !== equipment.id )
         }
         else{
-            star.equipments.push(newProduct)
+            star.equipments.push(newEquipment)
         }
         // newProduct.subPrice = calcSubPrice(newProduct)
         // cart.totalPrice = calcTotalPrice(cart.products)
         localStorage.setItem('star', JSON.stringify(star))
         dispatch({
-            type: 'CHANGE_STAR_COUNT',
-            payload: star.equipments.length
+            type: 'СHANGE_STAR_COUNT',
+            payload: star.equipments.length 
         })
     }
       const getStarLength = () => {
@@ -315,7 +293,23 @@ const EquipmentContextProvider = ({children}) => {
             payload: star
         })
         }
-        const chekProductInStar = (id) => {
+
+        // const changeEquipmentStar = (count, id) => {
+        //     let star = JSON.parse(localStorage.getItem('star'))
+        //     star.equipments = star.equipments.map(elem => {
+        //         if(elem.item.id === id && count >= 0){ 
+        //                 elem.count = count
+        //         }
+        //         return elem
+        //     })
+        //     localStorage.setItem('cart', JSON.stringify(star))
+        //     getStar()
+        // }
+        
+
+
+
+        const checkEquipmentsInStar = (id) => {
             let star = JSON.parse(localStorage.getItem('star'))
             if(!star) {
                 star= {
@@ -323,13 +317,12 @@ const EquipmentContextProvider = ({children}) => {
                 }
             }
             let newStar = star.equipments.filter(elem => elem.item.id === id)
-            // console.log(newCart);
-            return newStar.length = 0 ? true : false
+            return newStar.length > 0 ? true : false
         }
                // ! DELETEPRODUCTINstar
                const deleteProductInStar = (id) => {
                 let toDelete = JSON.parse(localStorage.getItem('star'));
-                toDelete.equipments =toDelete.equipments.filter(
+                toDelete.equipments = toDelete.equipments.filter(
                     (elem) => elem.item.id !== id
                 );
                 localStorage.setItem('star', JSON.stringify(toDelete))
@@ -340,7 +333,60 @@ const EquipmentContextProvider = ({children}) => {
                 })
             }
 
+             // комментарии
 
+    const createCommentAdd = async (newComment) => {
+        try{
+            await axios.post(API_COMMENTS, newComment)
+            // console.log(data)
+            getStream()
+        }catch(err){
+            console.log(err)
+        }
+        
+    }
+
+    const getStream = async () => {
+        try {
+            let res = await axios.get(API_COMMENTS)
+            let action = {
+                type: "GET_COMMENTS",
+                payload: res
+            }  
+            dispatch(action)
+    
+        } catch (error) {
+            alert(error)
+        }
+    }
+
+    const deleteComment = async (id) => {
+        await axios.delete(`${API_COMMENTS}/${id}`)
+        getStream()
+    }
+
+    // !EDIT 
+    const editComment = async (id) => {
+        try {
+            let res = await axios(`${API_COMMENTS}/${id}`)
+            let action = {
+                type: 'GET_EDIT_COMMENTS',
+                payload: res.data
+            }
+            dispatch(action)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    // ! SAVE EDITED coment
+    const saveEditedComment = async (updatedComment) => {
+        try {
+            await axios.patch(`${API_COMMENTS}/${updatedComment.id}`, updatedComment)
+            getStream()
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <equipmentContext.Provider value={{
@@ -365,10 +411,14 @@ const EquipmentContextProvider = ({children}) => {
             addToStar,
             getStarLength,
             getStar,
-            chekProductInStar,
+            checkEquipmentsInStar,
             deleteProductInStar,
-            getСomments,
+            getStream,
+            editComment,
+            deleteComment,
+            saveEditedComment,
             edit: state.edit,
+            editStream: state.editStream,
             equipments: state.equipments,
             cartLength: state.cartLength,
             cart: state.cart,

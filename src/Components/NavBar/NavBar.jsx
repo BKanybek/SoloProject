@@ -9,7 +9,6 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { productContext } from '../../ProductContext/ProductContext';
@@ -22,10 +21,9 @@ import { equipmentContext } from '../../ProductContext/EquipmentContext';
 
 export default function NavBar() {
     const { useAuth, logout } = React.useContext(productContext)
-    const { cartLength, getCartLength, starLength } = React.useContext(equipmentContext)
+    const { cartLength, getCartLength, getStarLength, starLength } = React.useContext(equipmentContext)
     const [ searchParams, setSearchParams ] = useSearchParams()
     const[ searchVal, setSearchVal ] = React.useState(searchParams.get('q') ? searchParams.get('q') : '')
-
     const currentUser = useAuth()
     async function handleLogOut(){
       try {
@@ -43,6 +41,9 @@ export default function NavBar() {
         })
     }, [searchVal])
 
+    React.useEffect(() => {
+      getStarLength()
+  }, [])
 
     React.useEffect(() => {
         getCartLength()
@@ -96,6 +97,10 @@ export default function NavBar() {
       <Link style={{textDecoration: 'none'}} to={!currentUser ? '/register' : '#'}>
         <MenuItem  disabled={currentUser ? true : false} onClick={handleMenuClose}>Register</MenuItem>
       </Link>
+      {currentUser ? (
+                      <Button variant='success' disabled={!currentUser} onClick={handleLogOut}>Выйти</Button>
+                      ) : null
+                    }
     </Menu>
   );
 
@@ -176,23 +181,21 @@ export default function NavBar() {
         className="me-auto my-2 my-lg-0"
         navbarScroll
       >
-        <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/list2">Equipment</Nav.Link>
-        <NavDropdown title="Link" id="navbarScrollingDropdown">
-          <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-          <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+        <Nav.Link style={{fontWeight: '800', color: 'black'}} href="/">Home</Nav.Link>
+        <Nav.Link style={{fontWeight: '800', color: 'black'}}  href="/list2">Equipment</Nav.Link>
+        <Nav.Link style={{fontWeight: '800', color: 'black'}}  href="/list">Специалисты</Nav.Link>
+        <NavDropdown style={{fontWeight: '800', color: 'black'}}  title="Разное" id="navbarScrollingDropdown">
+          <NavDropdown.Item href="/comment">Отзывы</NavDropdown.Item>
+          <NavDropdown.Item href="/comment">Контакты</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action5">
-            Something else here
+          О нас
           </NavDropdown.Item>
         </NavDropdown>
       </Nav>
       <Box sx={{ flexGrow: 1 }} /> 
-                      {currentUser ? (
-                      <Button variant='success' disabled={!currentUser} onClick={handleLogOut}>Log Out</Button>
-                      ) : null
-                    }
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+     
+                    <Box sx={{ display: { md: 'd-flex' } }}>
                       <Link to='/cart'>
                             <IconButton>
                                 <Badge badgeContent={cartLength} color='secondary' sx={{paddingTop: '10'}}>
@@ -203,7 +206,7 @@ export default function NavBar() {
                       <Link to='/favorite' style={{color: 'white'}}>
                         <IconButton>
                            <Badge badgeContent={starLength} color='secondary'>
-                              <FavoriteIcon sx={{color: 'red'}}/>
+                              <FavoriteIcon sx={{color: 'black'}}/>
                            </Badge>
                         </IconButton>
                       </Link>
@@ -219,20 +222,8 @@ export default function NavBar() {
                           <AccountCircle sx={{marginTop:'3px'}} />
                         </IconButton>
                       </Box>
-                      <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-                        <IconButton
-                          size="large"
-                          aria-label="show more"
-                          aria-controls={mobileMenuId}
-                          aria-haspopup="true"
-                          onClick={handleMobileMenuOpen}
-                          color="inherit"
-                        >
-                          <MoreIcon />
-                        </IconButton>
-                        {renderMobileMenu}
-                        {renderMenu}   
-                  </Box>
+                      {renderMobileMenu}
+                      {renderMenu}   
     </Navbar.Collapse>
   </Container>
 </Navbar>

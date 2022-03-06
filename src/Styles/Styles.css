@@ -47,6 +47,7 @@
   font-weight: 400;
   display: -ms-grid;
   display: grid;
+  margin: 0;
   text-align: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -78,7 +79,8 @@
         grid-template-columns: 1fr;
     -ms-grid-rows: (1fr)[9];
         grid-template-rows: repeat(9, 1fr);
-    height: 700px;
+    height: 950px;
+    grid-gap: -2px;
   }
 }
 

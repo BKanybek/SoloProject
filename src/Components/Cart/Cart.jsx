@@ -106,6 +106,7 @@ export default function Cart() {
                             Back
                         </Button>
                       </Link>
+                      
                     <Link to='/pay'>
                       <Button variant='contained' color='success'>
                           Buy

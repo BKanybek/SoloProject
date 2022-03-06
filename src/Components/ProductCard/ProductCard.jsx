@@ -14,6 +14,7 @@ import { productContext } from '../../ProductContext/ProductContext';
 export default function ProductCard({item}) {
     const {deleteProduct, useAuth} = React.useContext(productContext)
     const currentUser = useAuth()
+  
 
 
 

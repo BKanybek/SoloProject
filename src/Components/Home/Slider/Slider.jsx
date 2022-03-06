@@ -34,6 +34,8 @@ const Slider = () => {
     useEffect(() => {
         getProducts()
     }, [])
+
+    
     return (
       <>
         <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', flexWrap: 'wrap' }}>

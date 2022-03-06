@@ -17,7 +17,6 @@ const Comments = ({ commentsUrl, currentUserId }) => {
   const rootComments = backendComments.filter(
     (backendComment) => backendComment.parentId === null
   );
-  console.log(backendComments, 'test')
   const { createCommentAdd } = useContext(equipmentContext)
   const getReplies = (commentId) =>
     backendComments
@@ -27,7 +26,7 @@ const Comments = ({ commentsUrl, currentUserId }) => {
           new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
       );
   const addComment = (text, parentId) => {
-    createCommentApi(text, parentId).then((comment) => {
+      createCommentApi(text, parentId).then((comment) => {
       createCommentAdd(comment)
       setBackendComments([comment, ...backendComments]);
       setActiveComment(null);

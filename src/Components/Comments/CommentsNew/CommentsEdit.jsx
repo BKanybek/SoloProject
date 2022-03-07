@@ -4,7 +4,7 @@ import { Button, TextField } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { equipmentContext } from '../../../ProductContext/EquipmentContext';
 
-export default function CommentsEdit() {
+export default function CommentsEdit({handleClose}) {
     const [values, setValues] = React.useState({
         body: "",
     })
@@ -34,6 +34,10 @@ export default function CommentsEdit() {
         saveEditedComment(values)
     }
 
+    function toSave(){
+        handleClose()
+        handleSave()
+    }
 
     return(
         <div>
@@ -75,11 +79,11 @@ export default function CommentsEdit() {
             onChange={handleEditCommentInp}
             value={values.body}
             />
-            <Link to='/test1'>
-            <button onClick={handleSaving}> 
+
+            <button onClick={toSave}> 
                 redy to post
             </button>
-            </Link>
+
             
         </form>
     </div>

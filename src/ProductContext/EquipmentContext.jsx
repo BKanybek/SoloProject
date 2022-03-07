@@ -274,7 +274,7 @@ const EquipmentContextProvider = ({children}) => {
             }
         }
         dispatch({
-            type: 'CHANGE_STAR_COUNT',
+            type: 'СHANGE_STAR_COUNT',
             payload: star.equipments.length 
         })
     }

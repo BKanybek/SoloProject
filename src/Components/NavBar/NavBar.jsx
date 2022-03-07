@@ -23,7 +23,7 @@ export default function NavBar() {
     const [ searchParams, setSearchParams ] = useSearchParams()
     const[ searchVal, setSearchVal ] = React.useState(searchParams.get('q') ? searchParams.get('q') : '')
     console.log(cartLength, 'test1')
-    console.log(starLength, 'test2')
+    console.log(starLength, 'start')
     const currentUser = useAuth()
     async function handleLogOut(){
       try {

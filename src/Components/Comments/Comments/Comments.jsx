@@ -17,7 +17,6 @@ const Comments = ({ commentsUrl, currentUserId }) => {
   const rootComments = backendComments.filter(
     (backendComment) => backendComment.parentId === null
   );
-  console.log(backendComments, 'test')
   const { createCommentAdd } = useContext(equipmentContext)
   const getReplies = (commentId) =>
     backendComments

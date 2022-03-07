@@ -11,6 +11,7 @@ import Banner from './Banner/Banner';
 import { productContext } from '../../ProductContext/ProductContext';
 import { Button, IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
+import InfoBlog from './Slider/InfoBlog.jsx/InfoBlog';
 
 
 
@@ -48,9 +49,7 @@ const Home = () => {
 
             <Services/>
             <Slider/>
-            <div style={{backgroundColor: 'black', width: '100%', height: '100vh'}}>
-                HELLO4 Отзывы
-            </div>
+            <InfoBlog/>
             <Footer/>
         </div>
     );

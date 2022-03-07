@@ -33,7 +33,7 @@ const Footer = () => {
                 <li className="list-inline-item"><a href="#">Terms</a></li>
                 <li className="list-inline-item"><a href="#">Privacy Policy</a></li>
             </ul>
-            <p className="copyright">Company Name © 2018</p>
+            <p className="copyright">K.A.A © 2022</p>
         </footer>
     </div>
     );

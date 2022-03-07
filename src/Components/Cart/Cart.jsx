@@ -44,14 +44,14 @@ export default function Cart() {
   return (
     <>
       <TableContainer  sx={{display: 'flex', flexWrap: 'wrap'}} component={Paper}>
-        <Table sx={{  }} aria-label="customized table">
+        <Table  aria-label="customized table">
           <TableHead>
-            <TableRow>
+            <TableRow sx={{background: 'grey'}}>
               <StyledTableCell align='center'>Image</StyledTableCell>
               <StyledTableCell align="center">Title</StyledTableCell>
               <StyledTableCell align="center">Price</StyledTableCell>
               <StyledTableCell align="center">Count</StyledTableCell>
-              <StyledTableCell align="left">SubPrice</StyledTableCell>
+              <StyledTableCell align="left">SupPrice</StyledTableCell>
               <StyledTableCell align="left"></StyledTableCell>
             </TableRow>
           </TableHead>
@@ -61,13 +61,13 @@ export default function Cart() {
                   {cart.equipments .map((elem) => (
                     <StyledTableRow key={elem.item.id}>
                           <StyledTableCell align='center' component='th' scope='row'>
-                              <img width="150" src={elem.item.image1} />
+                              <img width="150" src={elem.item.image} />
                           </StyledTableCell>
                           <StyledTableCell align='center'>
-                              {elem.item.title1}
+                              {elem.item.title}
                           </StyledTableCell>
                           <StyledTableCell align='center'>
-                            $  {elem.item.price1}
+                            $  {elem.item.price}
                           </StyledTableCell>
                           <StyledTableCell align='center'>
                               <input style={{width: '70px'}}
@@ -101,7 +101,7 @@ export default function Cart() {
               </TableRow>
               <TableRow>
                   <TableCell colSpan={2} align='right'>
-                    <Link to='/list'>
+                    <Link style={{margin: '0 29px'}} to='/list2'>
                         <Button variant='contained' color='success'>
                             Back
                         </Button>
@@ -109,7 +109,7 @@ export default function Cart() {
                       
                     <Link to='/pay'>
                       <Button variant='contained' color='success'>
-                          Buy
+                          Pay
                       </Button>
                     </Link>
                     

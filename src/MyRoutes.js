@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Payment from './Components/Payment/Payment';
-// import ProductStar from './Components/ProductStar/ProductStar';
 import ProductsContextProvider from './ProductContext/ProductContext';
 import Login from './Components/Auth/Login/Login';
 import Register from './Components/Auth/Register/Register';
@@ -23,7 +22,6 @@ import CommentsList from './Components/Comments/CommentsNew/CommentsList';
 import CommentsEdit from './Components/Comments/CommentsNew/CommentsEdit';
 import CommentsAdd from './Components/Comments/CommentsNew/CommentsAdd';
 import AdminCreate from './Components/Admin/AdminCreate/AdminCreate';
-// import StreamRoom from './Components/StreamRoom/StreamRoom';
 
 
 
@@ -55,6 +53,7 @@ const MyRoutes = () => {
                         <Route path='/test/:id' element={<CommentsEdit/>} />
                         <Route path='/123' element={<CommentsAdd/>} />
                         <Route path='/admin' element={<AdminCreate/>} />
+                        {/* <Route path='/invoice' element={<Invoice/>} /> */}
                         {/* <Route path='/comment' element={<StreamRoom/>} /> */}
                         {/* <Route path='/star' element={<ProductStar/>} /> */}
                     </Routes>

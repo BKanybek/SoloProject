@@ -20,8 +20,8 @@ const FilterEquipments = () => {
     const search = new URLSearchParams(window.location.search)
     const navigate = useNavigate()
     const { getEquipments} = useContext(equipmentContext)
-    const [type, setType] = useState(search.get('type1') || '') 
-    const [price, setPrice] = useState(search.get('price1_lte') || 0)
+    const [type, setType] = useState(search.get('type') || '') 
+    const [price, setPrice] = useState(search.get('price_lte') || 0)
 
     const [searchParams, setSearchParams] = useSearchParams()
 
@@ -30,8 +30,8 @@ const FilterEquipments = () => {
         search.set(key, value)
         let newPath = `${window.location.pathname}?${search.toString()}`
         navigate(newPath)
-        setType(search.get('type1') || '')
-        setPrice(+search.get('price1_lte' || 0))
+        setType(search.get('type') || '')
+        setPrice(+search.get('price_lte' || 0))
         getEquipments()
     }
 
@@ -39,13 +39,14 @@ const FilterEquipments = () => {
         search.set(e, value)
         let newPath = `${window.location.pathname}?${search.toString()}`
         navigate(newPath)
-        setType(search.get('type1') || '')
+        setType(search.get('type') || '')
         getEquipments()
     }
 
     const resetFilter = () => {
         navigate('/')
         setType('')
+        setPrice(0)
         setSearchParams({
             '_limit': 6,
             "_page": 1
@@ -67,7 +68,7 @@ const FilterEquipments = () => {
                                 aria-label='gender' 
                                 // name='gender1' 
                                 value={type} 
-                                onChange={(e) => handleChangeType("type1", e.target.value)}
+                                onChange={(e) => handleChangeType("type", e.target.value)}
                             >
                                 <FormControlLabel 
                                     value='equipments'
@@ -89,14 +90,14 @@ const FilterEquipments = () => {
                         
                         <Grid sx={{display: 'flex', justifyContent: 'center'}}> 
                             <Slider sx={{color: 'black'}}
-                                onChange={(e) => filterEquipments('price1_lte', e.target.value)} valueLabelDisplay='auto' max={100000}
+                                onChange={(e) => filterEquipments('price_lte', e.target.value)} valueLabelDisplay='auto' max={100000}
                                 value={price}
                                 step={500}
                             />
                         </Grid>
                         <Button sx={{background: 'black'}} onClick={resetFilter}
                             variant='contained'>
-                            Сбросить
+                            Reset
                         </Button>
                     </Paper>
                 </Grid>

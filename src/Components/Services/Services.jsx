@@ -8,7 +8,7 @@ const Services = () => {
     return (
         <div className='main-page-body'>
             <div className="container">
-                <h2>УСЛУГИ</h2>
+                <h2>Services</h2>
 
                 <div className="card-list">
                     

@@ -14,6 +14,7 @@ import { productContext } from '../../ProductContext/ProductContext';
 export default function ProductCard({item}) {
     const {deleteProduct, useAuth} = React.useContext(productContext)
     const currentUser = useAuth()
+  
 
 
 
@@ -50,16 +51,15 @@ export default function ProductCard({item}) {
             <Link to={`/detail/${item.id}`} style={{textDecoration: 'none', color: 'black'}}> 
               <CardMedia 
                 width='300px'
+                height='250px'
                 component="img"
                 image={item.image}
                 alt={item.title}
               /> 
-              {currentUser?.email === "admin1@gmail.com" ? (  
-                <Typography sx={{fontSize: '20px', textAlign: 'center'}}>
-                  {item.Name}
+
+                <Typography sx={{paddingTop: '5px', fontSize: '20px', textAlign: 'center'}}>
+                  {item.name}
                 </Typography>  
-                ): null
-              }
               <Typography sx={{fontSize: '20px', color: 'black', textAlign: 'center', paddingTop: '20px'}}>
                 {item.type}
               </Typography>

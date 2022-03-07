@@ -11,11 +11,12 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import { equipmentContext } from '../../ProductContext/EquipmentContext';
 import { productContext } from '../../ProductContext/ProductContext';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import RaitingStar from '../RaitingStar/RaitingStar';
 // import ProductStar from '../../ProductStar/ProductStar';
 
 
 export default function EquipmentCard({item}) {
-    const {deleteEquipment, addToCart, addToStar, chekProductInStar, checkEquipmentInCart} = React.useContext(equipmentContext)
+    const {deleteEquipment, addToCart, addToStar, checkEquipmentsInStar, checkEquipmentInCart} = React.useContext(equipmentContext)
     const {useAuth} = React.useContext(productContext)
     const currentUser = useAuth()
 
@@ -24,7 +25,7 @@ export default function EquipmentCard({item}) {
       <CardActions disableSpacing>
           {currentUser?.email === "admin1@gmail.com" ? (
               <Link to={`equip/${item.id}`}>
-                  <IconButton>
+                  <IconButton>  
                     <EditIcon/>
                   </IconButton>
               </Link>
@@ -48,7 +49,7 @@ export default function EquipmentCard({item}) {
           <IconButton onClick={() => {
             addToStar(item) 
           }}
-            color = {chekProductInStar(item.id) ? 'secondary': 'inherit'}
+            color = {checkEquipmentsInStar(item.id) ? 'success' : 'primary'}
              >
               <FavoriteIcon/>
           </IconButton>
@@ -61,34 +62,34 @@ export default function EquipmentCard({item}) {
               <CardMedia 
                 width='300px'
                 component="img"
-                image={item.image1}
+                image={item.image}
                 alt={item.title}
               /> 
               {currentUser?.email === "admin1@gmail.com" ? (  
                 <Typography sx={{fontSize: '20px', textAlign: 'center'}}>
-                  {item.type1}
+                  {item.type}
                 </Typography>  
                 ): null
               }
               <Typography sx={{fontSize: '20px', color: 'black', textAlign: 'center', paddingTop: '20px'}}>
-                {item.title1}
+                {item.title}
               </Typography>
             {currentUser?.email === "admin1@gmail.com" ? ( 
               <Typography sx={{fontSize: '13px', paddingTop: '5px', textAlign: 'center'}}>
-                {item.description1}
+                {item.description}
               </Typography>
               ): null
             }
               <Typography sx={{fontSize: '25px', paddingTop: '5px', color: 'black',textAlign: 'center'}}>
-                  $ {item.price1}
+                  $ {item.price}
               </Typography>  
             </Link>
             <div style={{display: 'flex', justifyContent: 'center', paddingBottom: '10px'}}>
                 {icons}
               </div>
-              {/* <div style={{display: 'flex', justifyContent: 'center', paddingBottom: '10px'}}>
-                <ProductStar/>
-              </div> */}
+              <div style={{display: 'flex', justifyContent: 'center', paddingBottom: '10px'}}>
+                <RaitingStar/>
+              </div>
         </Card>
         </>     
   );

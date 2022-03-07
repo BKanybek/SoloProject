@@ -1,92 +1,92 @@
 {
   "equipments": [
     {
-      "title1": "Siemens Magnetom Trio 3T",
-      "image1": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
-      "price1": "500000",
-      "type1": "equipments",
-      "description1": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
-      "id": 1
-    },
-    {
-      "title1": "МРТ GE Signa HDxt 3.0T",
-      "image1": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
-      "price1": "200000",
-      "type1": "equipments",
-      "description1": "Signa HDxt 3.0T дает возможность проведения всех специализированных клинических исследований, а также решать наиболее сложные диагностические задачи в области неврологии, кардиологии, онкологии, ангиологии, при этом обладая компактным магнитом.",
+      "title": "МРТ GE Signa HDxt 3.0T",
+      "image": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
+      "price": "20000",
+      "type": "equipments",
+      "description": "Signa HDxt 3.0T дает возможность проведения всех специализированных клинических исследований, а также решать наиболее сложные диагностические задачи в области неврологии, кардиологии, онкологии, ангиологии, при этом обладая компактным магнитом.",
       "id": 2
     },
     {
-      "title1": "Siemens Magnetom Trio 3T",
-      "image1": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
-      "price1": "3444",
-      "type1": "equipments",
-      "description1": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
+      "title": "Siemens Magnetom Trio 3T",
+      "image": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
+      "price": "34448",
+      "type": "equipments",
+      "description": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
       "id": 3
     },
     {
-      "title1": "Siemens Magnetom Trio 3T",
-      "image1": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
-      "price1": "5555",
-      "type1": "equipments",
-      "description1": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
+      "title": "Siemens Magnetom Trio 3T",
+      "image": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
+      "price": "55555",
+      "type": "equipments",
+      "description": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
       "id": 4
     },
     {
-      "title1": "Siemens Magnetom Trio 3T",
-      "image1": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
-      "price1": "66666666",
-      "type1": "equipments",
-      "description1": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
+      "title": "Siemens Magnetom Trio 3T",
+      "image": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
+      "price": "60889",
+      "type": "equipments",
+      "description": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
       "id": 5
     },
     {
-      "title1": "Philips Achieva 3T",
-      "image1": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
-      "price1": "2323232",
-      "type1": "drug",
-      "description1": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
+      "title": "Philips Achieva 3T",
+      "image": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
+      "price": "232329",
+      "type": "drug",
+      "description": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
       "id": 6
     },
     {
-      "title1": "Экспресс-тест Leccurate ",
-      "image1": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
-      "price1": "22222",
-      "type1": "drug",
-      "description1": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
+      "title": "Экспресс-тест Leccurate ",
+      "image": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
+      "price": "22222",
+      "type": "drug",
+      "description": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
       "id": 7
     },
     {
-      "title1": "Siemens Magnetom Trio 3T",
-      "image1": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
-      "price1": "5555",
-      "type1": "equipments",
-      "description1": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
+      "title": "Siemens Magnetom Trio 3T",
+      "image": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
+      "price": "55552",
+      "type": "equipments",
+      "description": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
       "id": 8
     },
     {
-      "title1": "Siemens Magnetom Trio 3T",
-      "image1": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
-      "price1": "66666666",
-      "type1": "equipments",
-      "description1": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
+      "title": "Siemens Magnetom Trio 3T",
+      "image": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
+      "price": "66662",
+      "type": "equipments",
+      "description": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
       "id": 9
     },
     {
-      "title1": "Philips Achieva 3T",
-      "image1": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
-      "price1": "2323232",
-      "type1": "drug",
-      "description1": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
+      "title": "Philips Achieva 3T",
+      "image": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
+      "price": "70000",
+      "type": "drug",
+      "description": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
       "id": 10
     },
     {
-      "title1": "Экспресс-тест Leccurate ",
-      "image1": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
-      "price1": "22222",
-      "type1": "drug",
-      "description1": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
+      "title": "Экспресс-тест Leccurate ",
+      "image": "https://radio-med.ru/assets/cache_image/assets/resourceimages/84/Magnetom_trio_450x365_a2a.png",
+      "price": "5000",
+      "type": "drug",
+      "description": "Магнитно-резонансный томограф на основе использования сверхпроводящего магнита с напряженностью поля 3Т для обследования всего тела человека. Ориентирован на проведение научно-исследовательских работ, особенно в нейровизуализации, кардиологии и мультиядерной спектроскопии.",
       "id": 11
+    },
+    {
+      "title": "флюорографа ПроСкан-2000",
+      "image": "https://www.kokomeren.kg/wp-content/uploads/2017/11/proscan20002.jpg",
+      "price": "90000",
+      "type": "equipments",
+      "description": "ПроСкан-2000 предназначен для проведения малодозового профилактического обследования грудной клетки пациента в положении стоя в прямой и боковой проекциях и обеспечивает цифровую регистрацию изображения.",
+      "id": 14
     }
   ],
   "products": [
@@ -124,7 +124,7 @@
     },
     {
       "name": "John",
-      "type": "22222",
+      "type": "oncologist",
       "description": "специалист по диагностике и лечению онкологических заболеваний.",
       "image": "https://media.istockphoto.com/photos/portrait-of-male-doctor-in-white-coat-and-stethoscope-standing-in-picture-id1327024466?b=1&k=20&m=1327024466&s=170667a&w=0&h=vcw4Exhv4pkR8fMVLNXhNESaKq1HbYwJ1iElLlQBxI0=",
       "price": null,
@@ -145,40 +145,95 @@
       "image": "https://media.istockphoto.com/photos/portrait-of-male-doctor-in-white-coat-and-stethoscope-standing-in-picture-id1327024466?b=1&k=20&m=1327024466&s=170667a&w=0&h=vcw4Exhv4pkR8fMVLNXhNESaKq1HbYwJ1iElLlQBxI0=",
       "price": null,
       "id": 7
+    },
+    {
+      "name": "Dr.Alex",
+      "type": "neuropsychologist",
+      "description": "123",
+      "image": "https://themedicarestore.com/wp-content/uploads/2020/04/Medicare-Doctor-1-2048x1322.jpg",
+      "price": null,
+      "id": 8
+    },
+    {
+      "name": "Marcus",
+      "type": "surgeon",
+      "description": "2222",
+      "image": "https://img.medscapestatic.com/thumbnail_library/dt_140605_serious_male_doctor_hospital_800x600.jpg",
+      "price": null,
+      "id": 9
+    },
+    {
+      "name": "Marcus",
+      "type": "surgeon",
+      "description": "2222",
+      "image": "https://img.medscapestatic.com/thumbnail_library/dt_140605_serious_male_doctor_hospital_800x600.jpg",
+      "price": null,
+      "id": 10
+    },
+    {
+      "name": "Jordan",
+      "type": "ophthalmologist",
+      "description": "33333",
+      "image": "https://www.firestock.ru/download/s/vgbiok63k48l0ef/shutterstock_108451796.jpg",
+      "price": null,
+      "id": 11
+    },
+    {
+      "name": "Marcus",
+      "type": "surgeon",
+      "description": "2222",
+      "image": "https://img.medscapestatic.com/thumbnail_library/dt_140605_serious_male_doctor_hospital_800x600.jpg",
+      "price": null,
+      "id": 12
+    },
+    {
+      "name": "Karl",
+      "type": "surgeon",
+      "description": "2222",
+      "image": "https://paradigmlife.net/blog/wp-content/uploads/2020/03/doctor.jpg",
+      "price": null,
+      "id": 13
+    },
+    {
+      "name": "Alexand",
+      "type": "surgeon",
+      "description": "корректирует врожденные и приобретенные аномалии челюсти и лицевых костей, травмы, удаляет очаги гнойного воспаления мягких тканей лица и полости рта.",
+      "image": "https://calopinion.com/wp-content/uploads/2020/11/muzhchina-vrach.jpg",
+      "price": null,
+      "id": 14
+    },
+    {
+      "name": "Anjela",
+      "type": "ophthalmologist",
+      "description": "33333",
+      "image": "https://www.hyprocuredoctors.com/wp-content/uploads/2017/02/bg_hyp_doc.jpg",
+      "price": null,
+      "id": 15
+    },
+    {
+      "name": "Anna",
+      "type": "ophthalmologist",
+      "description": "33333",
+      "image": "https://www.vippng.com/png/detail/200-2000639_cbd-green-lab-capsules.png",
+      "price": null,
+      "id": 16
+    },
+    {
+      "name": "Artur",
+      "type": "ophthalmologist",
+      "description": "33333",
+      "image": "https://alkocentr-moskva.ru/wp-content/uploads/2018/12/lechenie-alkogolizma-v-moskve-anonimno3.jpg",
+      "price": null,
+      "id": 17
     }
   ],
   "comments": [
     {
-      "id": "9hbnt3epy",
-      "body": "hello",
-      "parentId": null,
-      "userId": "1",
-      "username": "Пользователь",
-      "createdAt": "2022-03-04T13:56:16.865Z"
-    },
-    {
-      "id": "hrlhvszyd",
-      "body": "BEKA",
-      "parentId": null,
-      "userId": "1",
-      "username": "Пользователь",
-      "createdAt": "2022-03-04T14:00:24.874Z"
-    },
-    {
-      "id": "40g2rd63w",
-      "body": "AIYMA",
-      "parentId": null,
-      "userId": "1",
-      "username": "Пользователь",
-      "createdAt": "2022-03-04T14:57:39.238Z"
-    },
-    {
-      "id": "b9xr3v2tv",
-      "body": "KSKSKSKSKSKSKKSKS",
-      "parentId": null,
-      "userId": "1",
-      "username": "Пользователь",
-      "createdAt": "2022-03-04T14:59:15.613Z"
+      "username": "",
+      "body": "Привет очень круто",
+      "image": "https://neertha.lk/profile/img/pro_pick.png",
+      "time": "2022-03-07T10:04:45.621Z",
+      "id": 2
     }
   ]
 }

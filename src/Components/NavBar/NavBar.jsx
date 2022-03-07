@@ -1,15 +1,13 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MoreIcon from '@mui/icons-material/MoreVert';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { productContext } from '../../ProductContext/ProductContext';
 import { Container, Nav, Navbar, NavDropdown,} from 'react-bootstrap';
@@ -24,6 +22,8 @@ export default function NavBar() {
     const { cartLength, getCartLength, getStarLength, starLength } = React.useContext(equipmentContext)
     const [ searchParams, setSearchParams ] = useSearchParams()
     const[ searchVal, setSearchVal ] = React.useState(searchParams.get('q') ? searchParams.get('q') : '')
+    console.log(cartLength, 'test1')
+    console.log(starLength, 'test2')
     const currentUser = useAuth()
     async function handleLogOut(){
       try {
@@ -46,7 +46,7 @@ export default function NavBar() {
   }, [])
 
     React.useEffect(() => {
-        getCartLength()
+      getCartLength()
     }, [])
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -155,12 +155,6 @@ export default function NavBar() {
   );
 
   
-  // const navigate = useNavigate()
-
-  // const returnHomeP age = () => {
-  //   navigate('/')
-  // }
-  
   return (
     <div>
               <Navbar className='navbar' expand="lg">
@@ -168,28 +162,19 @@ export default function NavBar() {
     <div><img style={{width: '50px', height: '50px'}} src={Logo} alt="" /></div>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
-      {/* <Form className="d-flex">
-          <FormControl
-            type="search"
-            placeholder="Search"
-            className="me-2"
-            aria-label="Search"
-          />
-          <Button variant="outline-success">Search</Button>
-        </Form> */}
-      <Nav
+      <Nav style={{ paddingLeft: '10px'}}
         className="me-auto my-2 my-lg-0"
         navbarScroll
       >
         <Nav.Link style={{fontWeight: '800', color: 'black'}} href="/">Home</Nav.Link>
         <Nav.Link style={{fontWeight: '800', color: 'black'}}  href="/list2">Equipment</Nav.Link>
-        <Nav.Link style={{fontWeight: '800', color: 'black'}}  href="/list">Специалисты</Nav.Link>
-        <NavDropdown style={{fontWeight: '800', color: 'black'}}  title="Разное" id="navbarScrollingDropdown">
-          <NavDropdown.Item href="/comment">Отзывы</NavDropdown.Item>
-          <NavDropdown.Item href="/comment">Контакты</NavDropdown.Item>
+        <Nav.Link style={{fontWeight: '800', color: 'black'}}  href="/list">Specialists</Nav.Link>
+        <NavDropdown style={{fontWeight: '800', color: 'black'}}  title="More" id="navbarScrollingDropdown">
+          <NavDropdown.Item href="/comment">Reviews</NavDropdown.Item>
+          <NavDropdown.Item href="/comment">Contacts</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action5">
-          О нас
+           About us
           </NavDropdown.Item>
         </NavDropdown>
       </Nav>
@@ -199,7 +184,7 @@ export default function NavBar() {
                       <Link to='/cart'>
                             <IconButton>
                                 <Badge badgeContent={cartLength} color='secondary' sx={{paddingTop: '10'}}>
-                                    <ShoppingCartIcon sx={{color: 'black', marginLeft: '3',marginTop: '5px'}}/>
+                                    <ShoppingCartIcon sx={{color: 'black', marginTop: '5px'}}/>
                                 </Badge>
                             </IconButton>
                       </Link>

@@ -40,7 +40,7 @@ export default function CommentShow({item}) {
             </IconButton>
             <Link to={`/editcoment/${item.id}`}>
                 <IconButton>
-                <CreateOutlinedIcon/>
+                    <CreateOutlinedIcon/>
                 </IconButton>
             </Link>
         </CardActions>

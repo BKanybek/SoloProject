@@ -84,19 +84,14 @@ const Filter = () => {
                                     label="Oncologist"
                                 />
                                 <FormControlLabel 
-                                    value='oncologist'
+                                    value='neuropsychologist'
                                     control={<Radio/>}
-                                    label="Oncologist"
+                                    label="Neuropsychologist"
                                 />
                                 <FormControlLabel
                                     value='x-ray'
                                     control={<Radio/>}
                                     label="X-ray"
-                                />
-                                <FormControlLabel
-                                    value='accessories'
-                                    control={<Radio/>}
-                                    label="Accessories"
                                 />
                             </RadioGroup>
                         </FormControl>
@@ -110,7 +105,7 @@ const Filter = () => {
                         </Grid> */}
                         <Button sx={{ maxWidth: '300px',background: 'black'}} onClick={resetFilter}
                             variant='contained'>
-                            Сбросить
+                            Reset
                         </Button>
                     </Paper>
                 </Grid>

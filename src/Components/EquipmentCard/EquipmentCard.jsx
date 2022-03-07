@@ -19,7 +19,6 @@ export default function EquipmentCard({item}) {
     const {deleteEquipment, addToCart, addToStar, checkEquipmentsInStar, checkEquipmentInCart} = React.useContext(equipmentContext)
     const {useAuth} = React.useContext(productContext)
     const currentUser = useAuth()
-    console.log(item);
 
     
     let icons = (

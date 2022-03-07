@@ -21,7 +21,7 @@ export default function App() {
   const ref = useRef(null);
   return (
     <div className="cards">
-      <div style={{paddingTop: '100px', width: '100%', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+      <div style={{ paddingTop: '100px', width: '100%', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <Cards
           number={number}
           name={name}
@@ -69,12 +69,12 @@ export default function App() {
         </form>
           <Link to='/'>
             <div className="form-actions">
-                <button className="btn btn-primary btn-block" onClick={() => deleteCartPayment()}>PAY</button>
+                <button className="btn btn-primary btn-block" onClick={() => deleteCartPayment()}>Оплата</button>
             </div>
           </Link>
           <Link to='/cart'>
             <div className="form-cart">
-                <button className="btn btn-primary btn-block">Back to cart</button>
+                <button className="btn btn-primary btn-block">Назад к корзине</button>
             </div>
           </Link>
       </div>

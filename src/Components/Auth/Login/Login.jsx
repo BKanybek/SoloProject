@@ -40,7 +40,6 @@ export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
     console.log({
       email: data.get('email'),
       password: data.get('password'),
@@ -110,14 +109,14 @@ export default function Login() {
             >
               Sign In
             </Button>
-            <Grid container>
+            <Grid sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}} container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link href="/forgot" variant="body2">
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/register" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

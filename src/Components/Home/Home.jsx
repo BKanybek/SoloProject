@@ -48,6 +48,7 @@ const Home = () => {
           }
             <Banner/>
             <Services/>
+            <br/>
             <Slider/>
             <InfoBlog/>
             <Footer/>

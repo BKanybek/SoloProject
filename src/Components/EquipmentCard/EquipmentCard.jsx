@@ -60,13 +60,14 @@ export default function EquipmentCard({item}) {
           <Card sx={{ maxWidth: 306, minWidth: 306 }}>
             <Link to={`/equip/${item.id}`} style={{textDecoration: 'none', color: 'black'}}> 
               <CardMedia 
-                width='300px'
+                 width='300px'
+                 height='250px'
                 component="img"
                 image={item.image}
                 alt={item.title}
               /> 
               {currentUser?.email === "admin1@gmail.com" ? (  
-                <Typography sx={{fontSize: '20px', textAlign: 'center'}}>
+                <Typography sx={{paddingTop: '8px', fontSize: '20px', textAlign: 'center'}}>
                   {item.type}
                 </Typography>  
                 ): null

@@ -9,16 +9,10 @@ const ContactUs = () => {
             <div className='container-details'>
                 <div className="details">
                     <h3> Contact info </h3>
-                    <p> E-mail: niloy.swe@gmail.com</p>
-                    <p> Mobile: +8801756770501 </p>
-                    <p> web: about.me/niloy-biswas </p>
-                </div>
-                <div className="details"> 
-                    <h3> Working hours: 9am-4pm </h3>
-                    <p> E-mail: mahi@gmail.com</p>
-                    <p> Mobile: +8801824141501 </p>
-                    <p> web: about.me/mahi.swe </p>
-                </div>			
+                    <p> E-mail: Westbek@gmail.com</p>
+                    <p> Mobile: +9960770010016 </p>
+                    <p> web: Kanybek.com </p>
+                </div>		
             </div>
 		        <div className="Contact-Form">
 

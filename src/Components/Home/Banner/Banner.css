@@ -37,7 +37,7 @@
 
 @media all and (max-width: 400px) {
     .carousel-item h3, p {
-        font-size: 10px;
+        font-size: 15px;
     }
 } 
 

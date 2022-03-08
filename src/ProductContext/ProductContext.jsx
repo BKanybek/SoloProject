@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { createContext, useEffect, useReducer, useState } from 'react';
 import { API } from '../Helpers/Const';
 import { auth } from '../Firebase';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
 
 export const productContext = createContext()
@@ -116,6 +116,11 @@ const ProductsContextProvider = ({children}) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
     
+    // function ForgotPassword(email){
+    //     return sendPasswordResetEmail(auth, email, {
+    //         url: 'http//localhost/3000/login'})
+    // }
+    
     function logout(){
         return signOut(auth)
     }
@@ -146,6 +151,7 @@ const ProductsContextProvider = ({children}) => {
             signUp,
             logout,
             useAuth,
+            // ForgotPassword,
             // deleteCartProduct,
             // deleteCartPayment,
             edit: state.edit,

@@ -42,7 +42,7 @@ const CommentsAdd = () => {
                                     value={values.body}
                                 />
                         </form>
-                        <button className='buttonShow' style={{margin: '10px 0 5px 5px'}} onClick={handleSave}> отправить</button>    
+                        <button className='buttonShow' style={{margin: '10px 0 5px 5px'}} onClick={handleSave}>Send</button>    
                     </div>
                 </div>
             {/* <form action="">

@@ -40,7 +40,7 @@ const reducer = (state = INIT_STATE, action) => {
         case "GET_COMMENTS":
             return{...state, comments: action.payload.data}
         case "GET_EDIT_COMMENTS":
-            return{...state, editStream: action.payload.data}
+            return{...state, editStream: action.payload}
         default: 
             return state
     }
@@ -353,6 +353,7 @@ const EquipmentContextProvider = ({children}) => {
                 type: "GET_COMMENTS",
                 payload: res
             }  
+            console.log(action, 'testAdd');
             dispatch(action)
     
         } catch (error) {
@@ -370,9 +371,10 @@ const EquipmentContextProvider = ({children}) => {
         try {
             let res = await axios(`${API_COMMENTS}/${id}`)
             let action = {
-                type: 'GET_EDIT_COMMENTS',
+                type: "GET_EDIT_COMMENTS",
                 payload: res.data
             }
+            console.log(action,'test');
             dispatch(action)
         } catch (error) {
             console.log(error);

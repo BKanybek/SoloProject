@@ -69,12 +69,12 @@ export default function App() {
         </form>
           <Link to='/'>
             <div className="form-actions">
-                <button className="btn btn-primary btn-block" onClick={() => deleteCartPayment()}>Оплата</button>
+                <button className="btn btn-primary btn-block" onClick={() => deleteCartPayment()}>Pay</button>
             </div>
           </Link>
           <Link to='/cart'>
             <div className="form-cart">
-                <button className="btn btn-primary btn-block">Назад к корзине</button>
+                <button className="btn btn-primary btn-block">Back to cart</button>
             </div>
           </Link>
       </div>

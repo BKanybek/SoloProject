@@ -2,7 +2,7 @@ import { Grid , Box} from '@mui/material';
 import React, { useContext, useEffect } from 'react';
 // import { productContext } from '../../../Contexts/ProductContext';
 import { equipmentContext } from '../../../ProductContext/EquipmentContext';
-import CommentCard from './CommetnsCard';
+import CommentsCard from './CommentsCard';
 const CommentList = () => {
     const {comments, getStream} = useContext(equipmentContext)
     useEffect(() => {
@@ -16,9 +16,9 @@ const CommentList = () => {
                         comments.map((item,index) =>(
                             <Grid
                             margin='20px'
-                            key={item.id}
+                            key={index}
                             >
-                                <CommentCard item={item}/>
+                                <CommentsCard item={item}  key={index}/>
                                 {/* style={{}} */}
                             </Grid>
                         ))

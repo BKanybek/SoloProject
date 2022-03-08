@@ -22,8 +22,6 @@ export default function NavBar() {
     const { cartLength, getCartLength, getStarLength, starLength } = React.useContext(equipmentContext)
     const [ searchParams, setSearchParams ] = useSearchParams()
     const[ searchVal, setSearchVal ] = React.useState(searchParams.get('q') ? searchParams.get('q') : '')
-    console.log(cartLength, 'test1')
-    console.log(starLength, 'start')
     const currentUser = useAuth()
     async function handleLogOut(){
       try {
@@ -171,7 +169,7 @@ export default function NavBar() {
         <Nav.Link style={{fontWeight: '800', color: 'black'}}  href="/list">Specialists</Nav.Link>
         <NavDropdown style={{fontWeight: '800', color: 'black'}}  title="More" id="navbarScrollingDropdown">
           <NavDropdown.Item href="/comment">Reviews</NavDropdown.Item>
-          <NavDropdown.Item href="/comment">Contacts</NavDropdown.Item>
+          <NavDropdown.Item href="/contact">Contacts</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action5">
            About us

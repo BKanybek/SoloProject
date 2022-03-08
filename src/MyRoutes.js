@@ -19,9 +19,11 @@ import EditEquipment from './Components/Admin/Equipments/EditEquipment/EditEquip
 import Stream from './Components/Comments/Stream';
 import Favorite from './Components/Favorite/Favorite';
 import CommentsList from './Components/Comments/CommentsNew/CommentsList';
-import CommentsEdit from './Components/Comments/CommentsNew/CommentsEdit';
 import CommentsAdd from './Components/Comments/CommentsNew/CommentsAdd';
 import AdminCreate from './Components/Admin/AdminCreate/AdminCreate';
+import ContactUs from './Components/Home/ContactUs/ContactUs';
+
+
 
 
 
@@ -37,7 +39,7 @@ const MyRoutes = () => {
                         <Route path='/list' element={<ListObject/>}/>
                         <Route path='/add' element={<AddObject/>} />
                         <Route path='/' element={<Home/>} />
-                        <Route path='list/edit/:id' element={<EditObject/>} />
+                        <Route path='/list/edit/:id' element={<EditObject/>} />
                         <Route path='/detail/:id' element={<DetailObject/>} />
                         <Route path='/cart' element={<Cart/>} />
                         <Route path='/register' element={<Register/>} />
@@ -50,12 +52,10 @@ const MyRoutes = () => {
                         <Route path='/comment' element={<Stream/>} />
                         <Route path='/favorite' element={<Favorite/>} />
                         <Route path='/2' element={<CommentsList/>} />
-                        <Route path='/test/:id' element={<CommentsEdit/>} />
                         <Route path='/123' element={<CommentsAdd/>} />
+                        <Route path='/contact' element={<ContactUs/>} />
                         <Route path='/admin' element={<AdminCreate/>} />
-                        {/* <Route path='/invoice' element={<Invoice/>} /> */}
-                        {/* <Route path='/comment' element={<StreamRoom/>} /> */}
-                        {/* <Route path='/star' element={<ProductStar/>} /> */}
+
                     </Routes>
                 </BrowserRouter>
              </EquipmentContextProvider>

@@ -82,6 +82,17 @@
     font-size: 16px;
   }
 
+  .buttonEdit{
+    background-color: #292929; /* Green */
+    border: none;
+    color: white;
+    padding: 7px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
 
   .comments-container-form{
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 6px 5px rgb(0 0 0 / 32%);

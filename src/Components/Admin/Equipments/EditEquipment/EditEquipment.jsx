@@ -7,16 +7,15 @@ import { equipmentContext } from '../../../../ProductContext/EquipmentContext';
 
 
 export default function EditEquipment  () {
-    const [values1, setValues1] = useState({
-        title1: '',
-        image1: '',
-        price1: '',
-        type1: '',
-        description1: ''
+    const [values, setValues] = useState({
+        title: '',
+        image: '',
+        price: '',
+        type: '',
+        description: ''
     })
 
     const { edit, editEquipment, saveEditedEquipment } = React.useContext(equipmentContext)
-
     const {id} = useParams()
 
     React.useEffect(()=>{
@@ -25,20 +24,20 @@ export default function EditEquipment  () {
 
     React.useEffect(() => {
         if(edit) {
-            setValues1(edit)
+            setValues(edit)
         }
     }, [edit])
 
     const handleEditInp = (e) => {
-        let obj1 ={
-            ...values1,
+        let obj ={
+            ...values,
             [e.target.name]: e.target.value
         }
-        setValues1(obj1)
+        setValues(obj)
     }
 
     const handleSave = () => {
-        saveEditedEquipment({...values1, id})
+        saveEditedEquipment({...values, id})
     }
 
 
@@ -64,7 +63,7 @@ export default function EditEquipment  () {
                     color: 'black'
                 }}>
                     <div>
-                        <img width='300' src={values1.image1} alt={values1.title1} />
+                        <img width='300' src={values.image} alt={values.title} />
                     </div>
                     <div style={{
                          width: '450 px',
@@ -81,29 +80,29 @@ export default function EditEquipment  () {
                             alignItems: 'center'
                         }}>
                         <TextField 
-                        style={{padding: '10px'}} name='title1' 
+                        style={{padding: '10px'}} name='title' 
                         onChange={handleEditInp} 
-                        value={values1.title1} variant='outlined' 
+                        value={values.title} variant='outlined' 
                         label='Title'/>
                     <TextField 
-                        style={{padding: '10px'}} name='image1' 
+                        style={{padding: '10px'}} name='image' 
                         onChange={handleEditInp} 
-                        value={values1.image1} variant='outlined' 
+                        value={values.image} variant='outlined' 
                         label='Image'/>
                     <TextField 
-                        style={{padding: '10px'}} name='price1' 
+                        style={{padding: '10px'}} name='price' 
                         onChange={handleEditInp} 
-                        value={values1.price1} variant='outlined' 
+                        value={values.price} variant='outlined' 
                         label='Price'/>
                     <TextField 
-                        style={{padding: '10px'}} name='type1' 
+                        style={{padding: '10px'}} name='type' 
                         onChange={handleEditInp} 
-                        value={values1.type1} variant='outlined' 
+                        value={values.type} variant='outlined' 
                         label='Type'/>
                     <TextField 
-                        style={{padding: '10px'}} name='description1' 
+                        style={{padding: '10px'}} name='description' 
                         onChange={handleEditInp} 
-                        value={values1.description1} variant='outlined' 
+                        value={values.description} variant='outlined' 
                         label='Description'/>
                 </form>
                 <Link to='/list2'>

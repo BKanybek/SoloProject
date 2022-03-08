@@ -16,6 +16,7 @@ import InfoBlog from './Slider/InfoBlog.jsx/InfoBlog';
 
 
 
+
 const Home = () => {
     const { useAuth } = React.useContext(productContext)
     const currentUser = useAuth()
@@ -46,7 +47,6 @@ const Home = () => {
             ) :null
           }
             <Banner/>
-
             <Services/>
             <Slider/>
             <InfoBlog/>

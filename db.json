@@ -87,6 +87,14 @@
       "type": "equipments",
       "description": "ПроСкан-2000 предназначен для проведения малодозового профилактического обследования грудной клетки пациента в положении стоя в прямой и боковой проекциях и обеспечивает цифровую регистрацию изображения.",
       "id": 14
+    },
+    {
+      "title": "222",
+      "image": "222",
+      "price": "222",
+      "type": "222",
+      "description": "222",
+      "id": 15
     }
   ],
   "products": [
@@ -230,17 +238,129 @@
   "comments": [
     {
       "username": "",
-      "body": "Привет очень круто",
+      "body": "Привет очень круто Прям",
       "image": "https://neertha.lk/profile/img/pro_pick.png",
       "time": "2022-03-07T10:04:45.621Z",
+      "id": 1,
+      "item": {
+        "username": "",
+        "body": "Привет очень круто",
+        "image": "https://neertha.lk/profile/img/pro_pick.png",
+        "time": "2022-03-07T10:04:45.621Z",
+        "id": 1
+      }
+    },
+    {
+      "username": "",
+      "body": "TEST",
+      "image": "https://neertha.lk/profile/img/pro_pick.png",
+      "time": "2022-03-07T19:07:07.736Z",
       "id": 2
     },
     {
       "username": "",
-      "body": "ОЧЕНЬ ПЛОХИЕ ТОВАРЫ",
+      "body": "123",
       "image": "https://neertha.lk/profile/img/pro_pick.png",
-      "time": "2022-03-07T13:59:31.284Z",
+      "time": "2022-03-07T19:07:07.736Z",
       "id": 3
+    },
+    {
+      "username": "",
+      "body": "Test",
+      "image": "",
+      "time": "2022-03-07T19:13:32.523Z",
+      "id": 4
+    },
+    {
+      "username": "",
+      "body": "Kana Ayima",
+      "image": "https://neertha.lk/profile/img/pro_pick.png",
+      "time": "2022-03-07T21:12:54.313Z",
+      "id": 5,
+      "item": {
+        "username": "",
+        "body": "Kana",
+        "image": "https://neertha.lk/profile/img/pro_pick.png",
+        "time": "2022-03-07T21:12:54.313Z",
+        "id": 5,
+        "item": {
+          "username": "",
+          "body": "Kana",
+          "image": "https://neertha.lk/profile/img/pro_pick.png",
+          "time": "2022-03-07T21:12:54.313Z",
+          "id": 5,
+          "item": {
+            "username": "",
+            "body": "Kana",
+            "image": "https://neertha.lk/profile/img/pro_pick.png",
+            "time": "2022-03-07T21:12:54.313Z",
+            "id": 5,
+            "item": {
+              "username": "",
+              "body": "Kana",
+              "image": "https://neertha.lk/profile/img/pro_pick.png",
+              "time": "2022-03-07T21:12:54.313Z",
+              "id": 5,
+              "item": {
+                "username": "",
+                "body": "Kana",
+                "image": "https://neertha.lk/profile/img/pro_pick.png",
+                "time": "2022-03-07T21:12:54.313Z",
+                "id": 5,
+                "item": {
+                  "username": "",
+                  "body": "Aguwa",
+                  "image": "https://neertha.lk/profile/img/pro_pick.png",
+                  "time": "2022-03-07T21:12:54.313Z",
+                  "id": 5,
+                  "item": {
+                    "username": "",
+                    "body": "kana",
+                    "image": "https://neertha.lk/profile/img/pro_pick.png",
+                    "time": "2022-03-07T21:12:54.313Z",
+                    "id": 5,
+                    "item": {
+                      "username": "",
+                      "body": "test",
+                      "image": "https://neertha.lk/profile/img/pro_pick.png",
+                      "time": "2022-03-07T21:12:54.313Z",
+                      "id": 5,
+                      "item": {
+                        "username": "",
+                        "body": "asd",
+                        "image": "https://neertha.lk/profile/img/pro_pick.png",
+                        "time": "2022-03-07T21:12:54.313Z",
+                        "id": 5,
+                        "item": {
+                          "username": "",
+                          "body": "123",
+                          "image": "https://neertha.lk/profile/img/pro_pick.png",
+                          "time": "2022-03-07T21:12:54.313Z",
+                          "id": 5
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "username": "",
+      "body": "123123123",
+      "image": "https://neertha.lk/profile/img/pro_pick.png",
+      "time": "2022-03-08T07:27:55.735Z",
+      "id": 6,
+      "item": {
+        "username": "",
+        "body": "123123123",
+        "image": "https://neertha.lk/profile/img/pro_pick.png",
+        "time": "2022-03-08T07:27:55.735Z",
+        "id": 6
+      }
     }
   ]
 }

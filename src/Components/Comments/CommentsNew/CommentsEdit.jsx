@@ -1,19 +1,17 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
-import { Button, TextField } from '@mui/material';
-import { useParams } from 'react-router-dom';
 import { equipmentContext } from '../../../ProductContext/EquipmentContext';
+import './CommentsStyle/CommentsLIst.css'
 
-export default function CommentsEdit({handleClose}) {
+export default function CommentsEdit({handleClose, item}) {
+    console.log(item.id)
     const [values, setValues] = React.useState({
         body: "",
     })
     const {editStream, editComment, saveEditedComment} = React.useContext(equipmentContext)
-    const {id} = useParams()
 
     React.useEffect(() => {
-        editComment(id)
-    }, [id])
+        editComment(item.id)
+    }, [item.id])
 
     React.useEffect(() => {
         if(editStream){
@@ -30,48 +28,26 @@ export default function CommentsEdit({handleClose}) {
         setValues(obj)
     }
 
-    const handleSaving = () => {
-        saveEditedComment(values)
+    const handleSaveComment = () => {
+        saveEditedComment({...values, item} )
     }
 
     function toSave(){
         handleClose()
-        handleSave()
+        handleSaveComment()
+        
     }
 
     return(
         <div>
-        {/* <img src="" alt="" 
-            name='userimg'
-            onChange={handleInp}
-            value={values.image}
-            /> */}
-        <form action="">
-            
-            <TextField
-            helperText="Please enter your name"
-            id="demo-helper-text-aligned"
-            label="Name"
-            size='small'
-            type='text'
-            name='username'
-            onChange={handleEditCommentInp}
-            value={values.username}
-            />
-            <TextField
-            name='image'
-            onChange={handleEditCommentInp} 
-            value={values.image} 
-            variant='outlined' 
-            label='Фото
-            '
-            />
+
+        <form style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}} action="">
             <textarea
-            // className="comment-form-textarea"   
             style={{width: '100%',
                 height: '80px',
-                marginBottom: '8px',
+                marginBottom: '22px',
                 marginTop: '8px',
+                padding: '10px',
                 border: '1px solid rgb(107, 114, 12)'}}
             type="text"
             placeholder="Write new comment about our Agency" 
@@ -79,12 +55,9 @@ export default function CommentsEdit({handleClose}) {
             onChange={handleEditCommentInp}
             value={values.body}
             />
-
-            <button onClick={toSave}> 
-                redy to post
+            <button className='buttonEdit' onClick={toSave}> 
+                Edit
             </button>
-
-            
         </form>
     </div>
     );

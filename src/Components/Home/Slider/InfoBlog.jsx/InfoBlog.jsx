@@ -87,9 +87,11 @@ const InfoBlog = () => {
             Ueno is a full-service agency, busy designing and building beautiful
             digital products, brands, and experiences.
             <br />
-            <Button variant="outlined" color="secondary">
-              Contact us
-            </Button>
+            <a className="link-a" href="/contact">
+              <Button variant="outlined" color="secondary">
+                Contact us
+              </Button>           
+            </a>
           </Typography>
         </div>
         <div className="vl">&nbsp;</div>

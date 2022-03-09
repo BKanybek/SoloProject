@@ -46,16 +46,15 @@ export default function Register() {
         name: data.get('firstName')
      });
      handleSignUp(data.get('email'), data.get('password'), data.get("firstName"))
-    //  navigate('/')
+     navigate('/')
     };
 
     async function handleSignUp(email, password, name){
         try {
             await signUp(email,password)
             const docRef = await addDoc(collection(firestore, 'users'), {name: name})
-            console.log(docRef, 'save in firestore')
         } catch (error) {
-            // alert('Пользователь с такой почтой уже существует')
+            alert('Пользователь с такой почтой уже существует')
         }
     }
 
@@ -131,14 +130,15 @@ export default function Register() {
                 />
               </Grid>
             </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign Up
-            </Button>
+            
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                  Sign Up 
+              </Button>
             <Grid container justifyContent="center">
               <Grid item>
                 <Link href="/login" variant="body2">
